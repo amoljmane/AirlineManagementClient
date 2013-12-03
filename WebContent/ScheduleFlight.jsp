@@ -107,7 +107,7 @@ function setDepartureAirport() {
 				<select name="destinationLocation" id="destinationLocation"  style="width: 100%;" >
 					<option value="-1" selected="selected" onclick="setDestinationAirport()" style="padding-left: 1%"></option>
 					<c:forEach var="location" items="${Locations}">
-						<option value="${location.location_name}" onclick="setDestinationAirport()">${location.airport_name}</option>
+						<option value="${location.location_name}" onclick="setDestinationAirport()" >${location.airport_name}</option>
 					</c:forEach>
 				</select>
 			</td>

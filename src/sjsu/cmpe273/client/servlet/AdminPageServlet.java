@@ -31,7 +31,7 @@ public class AdminPageServlet extends HttpServlet {
 		LocationsBean locationList[] = null;
 		locationList = client.listAllLocations();
 		
-		List<MonthsBean> monthsList = new ArrayList<>();
+		List<MonthsBean> monthsList = new ArrayList<MonthsBean>();
 		monthsList.add(new MonthsBean("01", "Jan"));
 		monthsList.add(new MonthsBean("02", "Feb"));
 		monthsList.add(new MonthsBean("03", "Mar"));
@@ -50,7 +50,7 @@ public class AdminPageServlet extends HttpServlet {
 			days.add(day);
 		}*/
 		
-		List<String> days = new ArrayList<>();
+		List<String> days = new ArrayList<String>();
 		for (int day = 1; day <= 31; day++) {
 			if(day < 10){
 				days.add("0" + day);
@@ -65,7 +65,7 @@ public class AdminPageServlet extends HttpServlet {
 		}*/
 		
 		
-		List<String> hours = new ArrayList<>();
+		List<String> hours = new ArrayList<String>();
 		for (int hour = 0; hour < 24; hour++) {
 			if(hour < 10){
 				hours.add("0" + hour);
@@ -79,7 +79,7 @@ public class AdminPageServlet extends HttpServlet {
 			minutes.add(minute);
 		}*/
 		
-		List<String> minutes = new ArrayList<>();
+		List<String> minutes = new ArrayList<String>();
 		for (int minute = 0; minute < 60; minute++) {
 			if(minute < 10) {
 				minutes.add("0" + minute);
@@ -101,8 +101,10 @@ public class AdminPageServlet extends HttpServlet {
 			request.getSession().setAttribute("Hours", hours);
 			request.getSession().setAttribute("Minutes", minutes);
 		}
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
+	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.doPost(request, response);
 	}
 }
