@@ -8,12 +8,39 @@
 </head>
 <body>
 <div align="center">
-<h1>** Admiin Page **</h1>
+<h1>** Admin Page **</h1>
 <%
 	String flightAdded = (String)request.getAttribute("FlightAdded");
 	if(flightAdded != null) {
 		%>
 		<h3><%= flightAdded %></h3>
+		<%
+	}
+%>
+
+<%
+	String noFlight = (String)request.getAttribute("NoFlight");
+	if(noFlight != null) {
+		%>
+		<h3><%= noFlight %></h3>
+		<%
+	}
+%>
+
+<%
+	String flightUpdated = (String)request.getAttribute("updateStatus");
+	if(flightUpdated != null) {
+		%>
+		<h3><%= flightUpdated %></h3>
+		<%
+	}
+%>
+
+<%
+	String cancelFlight = (String)request.getAttribute("cancelFlight");
+	if(cancelFlight != null) {
+		%>
+		<h3><%= cancelFlight %></h3>
 		<%
 	}
 %>
@@ -23,6 +50,13 @@
 	<form action="adminAction" method="post" name="getFlights" id="getFlights">
 		<input type="hidden" value="listAllFlights" name="listAllFlights" id="listAllFlights" />
 		<input type="submit" value="Shedule Flight"/>
+	</form>
+</div>
+<br><br><br><br>
+<div align="center">
+	<form action="journeyList" method="post" name="journeyList" id="journeyList">
+		<input type="hidden" value="listAllFlights" name="listAllFlights" id="listAllFlights" />
+		<input type="submit" value="List Scheduled Flights"/>
 	</form>
 </div>
 </body>
