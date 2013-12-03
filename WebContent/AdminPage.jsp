@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin Page</title>
 </head>
+
+
+
 <body>
 <div align="center">
 <h1>** Admiin Page **</h1>

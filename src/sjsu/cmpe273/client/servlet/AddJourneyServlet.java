@@ -54,4 +54,7 @@ public class AddJourneyServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.doPost(request, response);
+	}
 }

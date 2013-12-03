@@ -432,7 +432,7 @@
 	 		<input type="hidden" value="" name="destinationTimestamp" id="destinationTimestamp"/>
 	 		<input type="hidden" value="-1" name="seatsAvailable" id="seatsAvailable"/>
 	 		<input type="hidden" value="-1" name="flightId" id="flightId"/>
-			<input type="button" value="Create Flight" name="createFlight" id="createFlight" onclick="javascript:submitForm(this.form)"/>	 	
+			<input type="button" value="Create Flight" name="createFlight" id="createFlight" onclick="javascript:submitForm(this.form)" />	 	
 	 	</form>
 	 	</td>
 	 </tr>	
