@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sjsu.cmpe273.project.beans.AirlineEmployeeBean;
 import sjsu.cmpe273.project.beans.PersonBean;
 import sjsu.cmpe273.project.beans.UserBean;
 import sjsu.cmpe273.project.service.AirlineManagementServiceProxy;
@@ -37,21 +38,39 @@ public class EmployeeServlet extends HttpServlet {
 		
 		UserBean employee = new UserBean();
 		PersonBean person = new PersonBean();
-		employee.setPerson(person);
+		AirlineEmployeeBean employeeBean = new AirlineEmployeeBean();
+		
 		
 		if(flag.equals("addEmployee")){
+			person.setAddress_line1(request.getParameter("address1"));
+			person.setAddress_line2(request.getParameter("address1"));
+			person.setCity(request.getParameter("city"));
+			person.setCounrty(request.getParameter("country"));
+			person.setEmail_address(request.getParameter("email"));
+			person.setFirst_name(request.getParameter("lastname"));
+			person.setLast_name(request.getParameter("firstname"));
+			person.setPerson_type(2);
+			person.setState(request.getParameter("state"));
+			person.setZip_code(request.getParameter("zipCode"));
+			person.setPassport_number(request.getParameter("passport"));
+			
+			employeeBean.setSsn(Integer.parseInt(request.getParameter("ssn")));
+			employeeBean.setDesignation(2);
+			
+			employee.setPerson(person);
+			employee.setEmployeeBean(employeeBean);
 			
 			if(proxy.createEmployee(employee)){
-				url="admin/adminManagement?addMessage=success";
+				url="admin/adminManagement.jsp?addMessage=success";
 			}
 		}else if(flag.equals("editEmployee")){
 			
-			url="admin/adminManagement?editMessage=success";
+			url="admin/adminManagement.jsp?editMessage=success";
 			
 		}else if(flag.equals("deleteEmployee")){
 			
 			if(proxy.deleteEmployee(userSsn)){
-				url="admin/adminManagement?deleteMessage=success";
+				url="admin/adminManagement.jsp?deleteMessage=success";
 			}
 			
 		}else if(flag.equals("searchEmployee")){

@@ -14,12 +14,13 @@
 <!-- Latest compiled and minified JavaScript -->
 
 </head>
+
 <body>
 	<div class="container">
 		<%@ include file = "header.jsp" %>
 		
 		<div>
-			<h1>No Content</h1>
+			<h1><%=message %></h1>
 		</div>
 
 

@@ -46,6 +46,7 @@
 							<input type="text" class="form-control" name="lastname" placeholder="last name" required autofocus><label></label>
 							<input type="text" class="form-control" name="firstname"  placeholder="first name" required><label></label>
 							<input type="text" class="form-control" name="ssn"  placeholder="ssn" required><label></label>
+							<input type="text" class="form-control" name="passport"  placeholder="passport" required><label></label>
 							<input type="text" class="form-control" name="email"  placeholder="email" required><label></label>
 							<input type="text" class="form-control" name="address1"  placeholder="address_1" required><label></label>
 							<input type="text" class="form-control" name="address2"  placeholder="address_2" ><label></label>

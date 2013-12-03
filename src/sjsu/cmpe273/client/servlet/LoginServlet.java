@@ -20,12 +20,13 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String UserType = request.getParameter("who")==null?"":request.getParameter("who");
+		String UserType = request.getParameter("who") == null ? "" : request
+				.getParameter("who");
 		UserBean user = proxy.login(email, password);
-		
+
 		if (user != null) {
 			HttpSession hs = request.getSession();
 			hs.setAttribute("user", user);
@@ -36,10 +37,10 @@ public class LoginServlet extends HttpServlet {
 				hs.setAttribute("userType", "client");
 				response.sendRedirect("clientMain.jsp");
 			}
-		}else{
-			if(UserType.equals("admin")){
+		} else {
+			if (UserType.equals("admin")) {
 				response.sendRedirect("admin/adminLogin.jsp?error=loginError");
-			}else if(UserType.equals("client")){
+			} else if (UserType.equals("client")) {
 				response.sendRedirect("clientMain.jsp?error=loginError");
 			}
 		}
