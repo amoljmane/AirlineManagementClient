@@ -89,11 +89,11 @@ public class AdminPageServlet extends HttpServlet {
 		}
 		
 		if(flightArray == null){
-			url = "/AdminPage.jsp";
+			url = "admin/adminManagement.jsp";
 			request.setAttribute("NoFlight", "Flight cannot be scheduled now!!");
 		} else {
 //			url = "/ScheduleFlight.jsp";
-			url = "/Journey.jsp";
+			url = "admin/JourneyMng.jsp";
 			request.getSession().setAttribute("Flights", flightArray);
 			request.getSession().setAttribute("Locations", locationList);
 			request.getSession().setAttribute("Months", monthsList);
@@ -101,8 +101,9 @@ public class AdminPageServlet extends HttpServlet {
 			request.getSession().setAttribute("Hours", hours);
 			request.getSession().setAttribute("Minutes", minutes);
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		response.sendRedirect(url);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+//		dispatcher.forward(request, response);
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doPost(request, response);

@@ -45,10 +45,11 @@ public class AddJourneyServlet extends HttpServlet {
 		}
 		
 		if (isAdded) {
-			request.setAttribute("FlightAdded", "Flight Added succesfully!!");
-			url = "/AdminPage.jsp";
+			request.setAttribute("FlightAdded", "successfully");
+			url = "/adminmanagement.jsp";
 		} else {
-			url = "/Journey.jsp";
+			request.setAttribute("FlightAdded", "unsuccessfully");
+			url = "/adminmanagement.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

@@ -5,13 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../dist/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="../dist/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../dist/css/justified-nav.css">
-
-<!-- Latest compiled and minified JavaScript -->
  
 </head>
 <%@ include file="header.jsp"%>
@@ -20,11 +14,9 @@
 %>
 <body>
 	<div class="container">
-		<p></p>
-		<p></p>
 
 		<div style="padding-top: 30px">
-			<h1>Employee Management</h1>
+			<h1>Employee Management</h1><hr>
 		</div>
 
 		<!-- Button trigger modal -->
@@ -109,6 +101,7 @@
 					<th>LastName</th>
 					<th>FirstName</th>
 					<th>SSN</th>
+					<th>passport</th>
 					<th>email</th>
 					<th>address 1</th>
 					<th>address 2</th>
@@ -122,6 +115,7 @@
 					<td><%=employee.getPerson().getLast_name() %></td>
 					<td><%=employee.getPerson().getFirst_name()%></td>
 					<td><%=employee.getEmployeeBean().getSsn() %></td>
+					<td><%=employee.getPerson().getPassport_number() %></td>
 					<td><%=employee.getPerson().getEmail_address()%></td>
 					<td><%=employee.getPerson().getAddress_line1() %></td>
 					<td><%=employee.getPerson().getAddress_line2() %></td>
@@ -137,7 +131,5 @@
 	</div>
 	<!-- /container -->
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="../dist/js/bootstrap.min.js"></script>
 </body>
 </html>

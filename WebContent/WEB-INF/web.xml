@@ -12,28 +12,6 @@
     <servlet-name>AdminPage</servlet-name>
     <url-pattern>/adminAction</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
-
-	<servlet>
-		<servlet-name>JourneyList</servlet-name>
-		<servlet-class>sjsu.cmpe273.client.servlet.ListAllJourneyServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>JourneyList</servlet-name>
-		<url-pattern>/journeyList</url-pattern>
-	</servlet-mapping>
-  
-  	<servlet>
-		<servlet-name>EditJourney</servlet-name>
-		<servlet-class>sjsu.cmpe273.client.servlet.EditJourneyFlight</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>EditJourney</servlet-name>
-		<url-pattern>/editFlight</url-pattern>
-	</servlet-mapping>
-    
-=======
->>>>>>> bcc48f9e3711b044bf5200b790f9ceff25916b09
   <servlet>
     <servlet-name>AddJourney</servlet-name>
     <servlet-class>sjsu.cmpe273.client.servlet.AddJourneyServlet</servlet-class>
@@ -72,23 +50,34 @@
     <servlet-name>EmployeeServlet</servlet-name>
     <url-pattern>/EmployeeServlet</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
-		<servlet-name>UpdateJourney</servlet-name>
-		<servlet-class>sjsu.cmpe273.client.servlet.UpdateJourneyServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>UpdateJourney</servlet-name>
-		<url-pattern>/updateJourney</url-pattern>
-	</servlet-mapping>
-	
-    <servlet>
-		<servlet-name>CancelJourney</servlet-name>
-		<servlet-class>sjsu.cmpe273.client.servlet.CancelJourneyServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CancelJourney</servlet-name>
-		<url-pattern>/cancelJourney</url-pattern>
-	</servlet-mapping>
-		
+  <servlet>
+    <description></description>
+    <display-name>CreateJourneyServlet</display-name>
+    <servlet-name>CreateJourneyServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.CreateJourneyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateJourneyServlet</servlet-name>
+    <url-pattern>/CreateJourneyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JourneyServlet</display-name>
+    <servlet-name>JourneyServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.JourneyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JourneyServlet</servlet-name>
+    <url-pattern>/JourneyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchFlightServlet</display-name>
+    <servlet-name>SearchFlightServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.SearchFlightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchFlightServlet</servlet-name>
+    <url-pattern>/SearchFlightServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

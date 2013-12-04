@@ -63,6 +63,8 @@
 	}
 	
 	function submitForm(form) {		 
+		
+		/* var form = document.forms["createFlightForm"]; */		
 		var toSubmit = true;
 		
 		if(document.getElementById("departureYear").value == -1 ||  document.getElementById("departureMonth").value == -1 ||
@@ -81,6 +83,7 @@
 			document.getElementById("destinationYear").focus();
 		}
  		
+		alert(form.departureId.value + "departure id");
 		if(form.departureId.value == -1){
 			toSubmit = false;
 			alert(" Please Select Departure Airport!!");
@@ -117,6 +120,8 @@
 			document.getElementById("departureYear").focus();						
 		}
 		
+		/* alert(Number(document.getElementById("departureMonth").value) + "" + Number(document.getElementById("departureMonth").value)); */
+
 		var deptTime = document.getElementById("departureYear").value + "-" + document.getElementById("departureMonth").value + "-" + document.getElementById("departureDay").value
 						+ " " + document.getElementById("departureHour").value + ":" + document.getElementById("departureMinute").value;
  
@@ -126,24 +131,41 @@
 		form.departureTimestamp.value = deptTime;
 		form.destinationTimestamp.value = arrTime;
 		form.flightId.value = document.getElementById("flightSelect").value;
-		
-		form.ticketPrice.value = document.getElementById("ticketPriceInput").value;
-		alert(form.ticketPrice.value);
-		
-		if(form.ticketPrice.value == 0){
-			toSubmit = false;
-			alert("Enter Ticket Price!!");
-			form.ticketPrice.focus();
-		}
-		
-		if(isNaN(form.ticketPrice.value)){
-			toSubmit = false;
-			alert("Enter valid Ticket Price!!");
-			form.ticketPrice.focus();
-		}
-	    if(toSubmit == true) {
+		if(toSubmit == true) {
 			form.submit();
-		}  
+			
+			/* alert("Amol");
+			alert(form.departureId.value);
+			alert(form.destinationId.value);
+			alert(form.departureTimestamp.value);
+			var url = "saveJourneyDetails?departureId=" + form.departureId.value +"&destinationId=" + form.destinationId.value +
+					"&departureTimestamp=" + form.departureTimestamp.value + "&destinationTimestamp=" + form.destinationTimestamp.value + 
+					"&seatsAvailable=" + form.seatsAvailable.value;
+			alert(url);
+			form.action = url; */
+			 /* document.forms["createFlightForm"].submit(); 
+			 form.submit();
+			 /* var url = "saveJourneyDetails";
+			form.action = url;
+			form.submit(); 
+			
+			/*
+	 		<input type="hidden" value="-1" name="departureId" id="departureId"/>
+	 		<input type="hidden" value="-1" name="destinationId" id="destinationId"/>
+	 		<input type="hidden" value="" name="departureTimestamp" id="departureTimestamp"/>
+	 		<input type="hidden" value="" name="destinationTimestamp" id="destinationTimestamp"/>
+	 		<input type="hidden" value="-1" name="seatsAvailable" id="seatsAvailable"/>
+			<input type="button" value="Create Flight" name="createFlight" id="createFlight" onclick="javascript:submitForm(this.form)"/>	 
+			
+			
+			
+			var url = "saveJourneyDetails?departureId=" + form.departureId.value +"&destinationId=" + form.destinationId.value + "&departureTimestamp=" + form.deptTime.value
+						+ "&destinationTimestamp=" + form.destinationTimestamp.value + "&seatsAvailable=" + form.seatsAvailable.value;
+			alert(url);
+			form.action = url;
+			form.submit(); 
+			*/
+		} 
 	}
 </script>
 </head>
@@ -264,7 +286,7 @@
 	 </tr>	 
 	<tr>
 		<td>
-			Destination Airport :
+			Departure Airport :
 		</td>
 		<td>
 			<select name="destinationLocation" id="destinationLocation"  style="width: 100%;" >
@@ -275,14 +297,14 @@
 			</select>
 		</td>
 		<td>
-			Destination City :
+			Departure Time :
 		</td>
 		<td align="center">
 			<!-- <input type="text" name="destinationAirport" id="destinationAirport" value="" disabled="disabled" style="display: none;" size="13" align="middle"/> -->
 			<input type="text" name="destinationAirport" id="destinationAirport" value="" disabled="disabled"  size="13" align="middle"/>
 		</td>
 		<td>
-			Arrival Time :
+			Destination Time :
 		</td>
 		<td>
 			<select name="destinationYear" id="destinationYear">
@@ -401,26 +423,9 @@
 		<td></td>
 		<td></td>	 
 	 </tr>
-	 <tr>
-	 	<td>
-	 		Enter Ticket Price ::
-	 	</td>
-	 	<td>
-	 		<input type="text" value="0" name="ticketPriceInput" id="ticketPriceInput" />
-	 	</td>
-		<td></td>
-		<td></td>		 
-		<td></td>
-		<td></td>
-		<td></td>		 
-		<td></td>
-		<td></td>
-		<td></td>		 	
-	 </tr>
 	 <tr align="center">
 	 	<td colspan="10">
 	 	<form action="saveJourneyDetails" method="post" name="createFlightForm" id="createFlightForm">
-	 		<input type="hidden" value="-1" name="ticketPrice" id="ticketPrice"/>
 	 		<input type="hidden" value="-1" name="departureId" id="departureId"/>
 	 		<input type="hidden" value="-1" name="destinationId" id="destinationId"/>
 	 		<input type="hidden" value="amol" name="departureTimestamp" id="departureTimestamp"/>

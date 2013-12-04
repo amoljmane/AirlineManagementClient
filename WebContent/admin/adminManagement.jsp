@@ -5,29 +5,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../dist/css/bootstrap.min.css">
 
-<!-- Optional theme -->
+<link rel="stylesheet" href="../dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../dist/css/justified-nav.css">
 
 <!-- Latest compiled and minified JavaScript -->
 
 </head>
-
+<%@ include file = "header.jsp" %>
 <body>
 	<div class="container">
-		<%@ include file = "header.jsp" %>
+		
 		
 		<div>
 			<h1><%=message %></h1>
+			<h1><%=addFlightMessage %></h1>
+			<h1><%=noFlight %></h1>
 		</div>
 
 
 	</div>
 	<!-- /container -->
-
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="../dist/js/bootstrap.min.js"></script>
 </body>
 </html>

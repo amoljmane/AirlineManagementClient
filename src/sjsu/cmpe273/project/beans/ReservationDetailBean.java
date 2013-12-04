@@ -10,11 +10,15 @@ package sjsu.cmpe273.project.beans;
 public class ReservationDetailBean  implements java.io.Serializable {
     private sjsu.cmpe273.project.beans.BookingDetailBean bookingDetailBean;
 
+    private sjsu.cmpe273.project.beans.LocationsBean destination;
+
     private sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean;
 
     private sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean;
 
     private sjsu.cmpe273.project.beans.PersonBean personBean;
+
+    private sjsu.cmpe273.project.beans.LocationsBean source;
 
     private sjsu.cmpe273.project.beans.TravelerBean travelerBean;
 
@@ -23,14 +27,18 @@ public class ReservationDetailBean  implements java.io.Serializable {
 
     public ReservationDetailBean(
            sjsu.cmpe273.project.beans.BookingDetailBean bookingDetailBean,
+           sjsu.cmpe273.project.beans.LocationsBean destination,
            sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean,
            sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean,
            sjsu.cmpe273.project.beans.PersonBean personBean,
+           sjsu.cmpe273.project.beans.LocationsBean source,
            sjsu.cmpe273.project.beans.TravelerBean travelerBean) {
            this.bookingDetailBean = bookingDetailBean;
+           this.destination = destination;
            this.flightDetailBean = flightDetailBean;
            this.journeyDetailBean = journeyDetailBean;
            this.personBean = personBean;
+           this.source = source;
            this.travelerBean = travelerBean;
     }
 
@@ -52,6 +60,26 @@ public class ReservationDetailBean  implements java.io.Serializable {
      */
     public void setBookingDetailBean(sjsu.cmpe273.project.beans.BookingDetailBean bookingDetailBean) {
         this.bookingDetailBean = bookingDetailBean;
+    }
+
+
+    /**
+     * Gets the destination value for this ReservationDetailBean.
+     * 
+     * @return destination
+     */
+    public sjsu.cmpe273.project.beans.LocationsBean getDestination() {
+        return destination;
+    }
+
+
+    /**
+     * Sets the destination value for this ReservationDetailBean.
+     * 
+     * @param destination
+     */
+    public void setDestination(sjsu.cmpe273.project.beans.LocationsBean destination) {
+        this.destination = destination;
     }
 
 
@@ -116,6 +144,26 @@ public class ReservationDetailBean  implements java.io.Serializable {
 
 
     /**
+     * Gets the source value for this ReservationDetailBean.
+     * 
+     * @return source
+     */
+    public sjsu.cmpe273.project.beans.LocationsBean getSource() {
+        return source;
+    }
+
+
+    /**
+     * Sets the source value for this ReservationDetailBean.
+     * 
+     * @param source
+     */
+    public void setSource(sjsu.cmpe273.project.beans.LocationsBean source) {
+        this.source = source;
+    }
+
+
+    /**
      * Gets the travelerBean value for this ReservationDetailBean.
      * 
      * @return travelerBean
@@ -149,6 +197,9 @@ public class ReservationDetailBean  implements java.io.Serializable {
             ((this.bookingDetailBean==null && other.getBookingDetailBean()==null) || 
              (this.bookingDetailBean!=null &&
               this.bookingDetailBean.equals(other.getBookingDetailBean()))) &&
+            ((this.destination==null && other.getDestination()==null) || 
+             (this.destination!=null &&
+              this.destination.equals(other.getDestination()))) &&
             ((this.flightDetailBean==null && other.getFlightDetailBean()==null) || 
              (this.flightDetailBean!=null &&
               this.flightDetailBean.equals(other.getFlightDetailBean()))) &&
@@ -158,6 +209,9 @@ public class ReservationDetailBean  implements java.io.Serializable {
             ((this.personBean==null && other.getPersonBean()==null) || 
              (this.personBean!=null &&
               this.personBean.equals(other.getPersonBean()))) &&
+            ((this.source==null && other.getSource()==null) || 
+             (this.source!=null &&
+              this.source.equals(other.getSource()))) &&
             ((this.travelerBean==null && other.getTravelerBean()==null) || 
              (this.travelerBean!=null &&
               this.travelerBean.equals(other.getTravelerBean())));
@@ -175,6 +229,9 @@ public class ReservationDetailBean  implements java.io.Serializable {
         if (getBookingDetailBean() != null) {
             _hashCode += getBookingDetailBean().hashCode();
         }
+        if (getDestination() != null) {
+            _hashCode += getDestination().hashCode();
+        }
         if (getFlightDetailBean() != null) {
             _hashCode += getFlightDetailBean().hashCode();
         }
@@ -183,6 +240,9 @@ public class ReservationDetailBean  implements java.io.Serializable {
         }
         if (getPersonBean() != null) {
             _hashCode += getPersonBean().hashCode();
+        }
+        if (getSource() != null) {
+            _hashCode += getSource().hashCode();
         }
         if (getTravelerBean() != null) {
             _hashCode += getTravelerBean().hashCode();
@@ -204,6 +264,12 @@ public class ReservationDetailBean  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("destination");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "destination"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("flightDetailBean");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "flightDetailBean"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
@@ -219,6 +285,12 @@ public class ReservationDetailBean  implements java.io.Serializable {
         elemField.setFieldName("personBean");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "personBean"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("source");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "source"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
