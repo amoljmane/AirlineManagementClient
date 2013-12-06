@@ -1,6 +1,8 @@
 package sjsu.cmpe273.project.beans;
 
-public class MonthsBean {
+import java.io.Serializable;
+
+public class MonthsBean implements Serializable {
 	String monthNumber;
 	String month;
 

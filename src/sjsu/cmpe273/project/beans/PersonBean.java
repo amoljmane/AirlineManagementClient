@@ -14,7 +14,9 @@ public class PersonBean  implements java.io.Serializable {
 
     private java.lang.String city;
 
-    private java.lang.String counrty;
+    private java.lang.String country;
+
+    private java.lang.String dob;
 
     private java.lang.String email_address;
 
@@ -23,6 +25,8 @@ public class PersonBean  implements java.io.Serializable {
     private java.lang.String last_name;
 
     private java.lang.String passport_number;
+
+    private int person_deleted;
 
     private int person_id;
 
@@ -39,11 +43,13 @@ public class PersonBean  implements java.io.Serializable {
            java.lang.String address_line1,
            java.lang.String address_line2,
            java.lang.String city,
-           java.lang.String counrty,
+           java.lang.String country,
+           java.lang.String dob,
            java.lang.String email_address,
            java.lang.String first_name,
            java.lang.String last_name,
            java.lang.String passport_number,
+           int person_deleted,
            int person_id,
            int person_type,
            java.lang.String state,
@@ -51,11 +57,13 @@ public class PersonBean  implements java.io.Serializable {
            this.address_line1 = address_line1;
            this.address_line2 = address_line2;
            this.city = city;
-           this.counrty = counrty;
+           this.country = country;
+           this.dob = dob;
            this.email_address = email_address;
            this.first_name = first_name;
            this.last_name = last_name;
            this.passport_number = passport_number;
+           this.person_deleted = person_deleted;
            this.person_id = person_id;
            this.person_type = person_type;
            this.state = state;
@@ -124,22 +132,42 @@ public class PersonBean  implements java.io.Serializable {
 
 
     /**
-     * Gets the counrty value for this PersonBean.
+     * Gets the country value for this PersonBean.
      * 
-     * @return counrty
+     * @return country
      */
-    public java.lang.String getCounrty() {
-        return counrty;
+    public java.lang.String getCountry() {
+        return country;
     }
 
 
     /**
-     * Sets the counrty value for this PersonBean.
+     * Sets the country value for this PersonBean.
      * 
-     * @param counrty
+     * @param country
      */
-    public void setCounrty(java.lang.String counrty) {
-        this.counrty = counrty;
+    public void setCountry(java.lang.String country) {
+        this.country = country;
+    }
+
+
+    /**
+     * Gets the dob value for this PersonBean.
+     * 
+     * @return dob
+     */
+    public java.lang.String getDob() {
+        return dob;
+    }
+
+
+    /**
+     * Sets the dob value for this PersonBean.
+     * 
+     * @param dob
+     */
+    public void setDob(java.lang.String dob) {
+        this.dob = dob;
     }
 
 
@@ -220,6 +248,26 @@ public class PersonBean  implements java.io.Serializable {
      */
     public void setPassport_number(java.lang.String passport_number) {
         this.passport_number = passport_number;
+    }
+
+
+    /**
+     * Gets the person_deleted value for this PersonBean.
+     * 
+     * @return person_deleted
+     */
+    public int getPerson_deleted() {
+        return person_deleted;
+    }
+
+
+    /**
+     * Sets the person_deleted value for this PersonBean.
+     * 
+     * @param person_deleted
+     */
+    public void setPerson_deleted(int person_deleted) {
+        this.person_deleted = person_deleted;
     }
 
 
@@ -323,9 +371,12 @@ public class PersonBean  implements java.io.Serializable {
             ((this.city==null && other.getCity()==null) || 
              (this.city!=null &&
               this.city.equals(other.getCity()))) &&
-            ((this.counrty==null && other.getCounrty()==null) || 
-             (this.counrty!=null &&
-              this.counrty.equals(other.getCounrty()))) &&
+            ((this.country==null && other.getCountry()==null) || 
+             (this.country!=null &&
+              this.country.equals(other.getCountry()))) &&
+            ((this.dob==null && other.getDob()==null) || 
+             (this.dob!=null &&
+              this.dob.equals(other.getDob()))) &&
             ((this.email_address==null && other.getEmail_address()==null) || 
              (this.email_address!=null &&
               this.email_address.equals(other.getEmail_address()))) &&
@@ -338,6 +389,7 @@ public class PersonBean  implements java.io.Serializable {
             ((this.passport_number==null && other.getPassport_number()==null) || 
              (this.passport_number!=null &&
               this.passport_number.equals(other.getPassport_number()))) &&
+            this.person_deleted == other.getPerson_deleted() &&
             this.person_id == other.getPerson_id() &&
             this.person_type == other.getPerson_type() &&
             ((this.state==null && other.getState()==null) || 
@@ -366,8 +418,11 @@ public class PersonBean  implements java.io.Serializable {
         if (getCity() != null) {
             _hashCode += getCity().hashCode();
         }
-        if (getCounrty() != null) {
-            _hashCode += getCounrty().hashCode();
+        if (getCountry() != null) {
+            _hashCode += getCountry().hashCode();
+        }
+        if (getDob() != null) {
+            _hashCode += getDob().hashCode();
         }
         if (getEmail_address() != null) {
             _hashCode += getEmail_address().hashCode();
@@ -381,6 +436,7 @@ public class PersonBean  implements java.io.Serializable {
         if (getPassport_number() != null) {
             _hashCode += getPassport_number().hashCode();
         }
+        _hashCode += getPerson_deleted();
         _hashCode += getPerson_id();
         _hashCode += getPerson_type();
         if (getState() != null) {
@@ -418,8 +474,14 @@ public class PersonBean  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("counrty");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "counrty"));
+        elemField.setFieldName("country");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "country"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dob");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "dob"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -446,6 +508,12 @@ public class PersonBean  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "passport_number"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("person_deleted");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "person_deleted"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("person_id");

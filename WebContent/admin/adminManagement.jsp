@@ -16,11 +16,8 @@
 <%@ include file = "header.jsp" %>
 <body>
 	<div class="container">
-		
-		
-		<div>
+		<div style="padding-top: 30px">
 			<h1><%=message %></h1>
-			<h1><%=addFlightMessage %></h1>
 			<h1><%=noFlight %></h1>
 		</div>
 

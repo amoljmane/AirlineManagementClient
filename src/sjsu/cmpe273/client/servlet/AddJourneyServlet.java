@@ -29,7 +29,15 @@ public class AddJourneyServlet extends HttpServlet {
 		journeyDetailBean.setFlight_destination(Integer.parseInt(request.getParameter("destinationId")));
 		journeyDetailBean.setSeats_available(Integer.parseInt(request.getParameter("seatsAvailable")));
 		journeyDetailBean.setFlight_id(Integer.parseInt(request.getParameter("flightId")));
+		journeyDetailBean.setTicket_price(Float.parseFloat(request.getParameter("ticketPrice")));
 
+		System.out.println("depatureTime --->" + depatureTime);
+		System.out.println("arrivalTime --->"+ arrivalTime);
+		System.out.println("source ----> "+Integer.parseInt(request.getParameter("departureId")));
+		System.out.println("destination---->"+Integer.parseInt(request.getParameter("destinationId")));
+		System.out.println("setSeats_available---->"+Integer.parseInt(request.getParameter("seatsAvailable")));
+		System.out.println("setFlight_id---->"+Integer.parseInt(request.getParameter("seatsAvailable")));
+		System.out.println("setFlight_id ---->"+Integer.parseInt(request.getParameter("flightId")));
 		boolean isAdded = false;
 		boolean isDuplicate = false;
 
@@ -45,15 +53,17 @@ public class AddJourneyServlet extends HttpServlet {
 		}
 		
 		if (isAdded) {
-			request.setAttribute("FlightAdded", "successfully");
-			url = "/adminmanagement.jsp";
+			//request.setAttribute("FlightAdded", "successfully");
+			url = "admin/adminManagement.jsp?message=FlightAdded";
 		} else {
-			request.setAttribute("FlightAdded", "unsuccessfully");
-			url = "/adminmanagement.jsp";
+			//request.setAttribute("FlightAdded", "unsuccessfully");
+			url = "admin/adminManagement.jsp?message=FlightAddedError";
 		}
-		
+		response.sendRedirect(url);
+		/*
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
+		*/
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doPost(request, response);

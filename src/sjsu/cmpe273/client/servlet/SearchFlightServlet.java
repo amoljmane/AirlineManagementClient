@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sjsu.cmpe273.client.util.DateFormatConverter;
 import sjsu.cmpe273.project.beans.JourneyDetailBean;
 import sjsu.cmpe273.project.service.AirlineManagementServiceProxy;
 
@@ -25,7 +26,7 @@ public class SearchFlightServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String to = request.getParameter("to");
 		String from = request.getParameter("from");
-		String departure_time = request.getParameter("time");
+		String departure_time = DateFormatConverter.convertToMySqlDate(request.getParameter("time"),false);
 		System.out.println(" search flights!");
 		String url = "";
 		JourneyDetailBean journey = new JourneyDetailBean();
@@ -39,5 +40,4 @@ public class SearchFlightServlet extends HttpServlet {
 		}
 		response.sendRedirect(url);
 	}
-
 }

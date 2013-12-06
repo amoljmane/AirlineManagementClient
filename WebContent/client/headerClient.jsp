@@ -17,6 +17,20 @@
 <link rel="stylesheet" href="../dist/css/justified-nav.css">
 <link rel="stylesheet" href="../dist/css/style.css">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+
+	$(function() {
+		var availableTags = [ "San Jose", "San Francisco", "Ney York",
+				"Shanghai", "Beijing", "Sichuan", "Chicago", "Shengzhen",
+				"Xiamen", "Tokyo", "Busan" ];
+		$(".tags").autocomplete({
+			source : availableTags
+		});
+	});
+</script>
 </head>
 
 <body>

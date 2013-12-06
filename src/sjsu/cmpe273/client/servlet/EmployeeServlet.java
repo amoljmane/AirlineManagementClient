@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sjsu.cmpe273.client.util.DateFormatConverter;
 import sjsu.cmpe273.project.beans.AirlineEmployeeBean;
 import sjsu.cmpe273.project.beans.PersonBean;
 import sjsu.cmpe273.project.beans.UserBean;
@@ -30,67 +31,59 @@ public class EmployeeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession hs = request.getSession();
-		String flag = request.getParameter("flag") == null ? "list" : request
-				.getParameter("flag");
+		String flag = request.getParameter("flag") == null ? "list" : request.getParameter("flag");
 		System.out.println("flag ---> " + flag);
 		String url = "admin/EmployeeMng.jsp";
-		String ssn = request.getParameter("ssn");
-		int userSsn = -1;
-		if (ssn != null) {
-			userSsn = Integer.parseInt(ssn);
-		}
+		
 
 		UserBean employee = new UserBean();
 		PersonBean person = new PersonBean();
+		
 		AirlineEmployeeBean employeeBean = new AirlineEmployeeBean();
 
 		if (flag.equals("addEmployee")) {
-			person.setAddress_line1(request.getParameter("address1"));
-			person.setAddress_line2(request.getParameter("address1"));
-			person.setCity(request.getParameter("city"));
-			person.setCounrty(request.getParameter("country"));
-			person.setEmail_address(request.getParameter("email"));
-			person.setFirst_name(request.getParameter("lastname"));
-			person.setLast_name(request.getParameter("firstname"));
-			person.setPerson_type(2);
-			person.setState(request.getParameter("state"));
-			person.setZip_code(request.getParameter("zipCode"));
-			person.setPassport_number(request.getParameter("passport"));
-
+			
+			person = this.formUserBean(request).getPerson();
+			
 			employeeBean.setSsn(Integer.parseInt(request.getParameter("ssn")));
 			employeeBean.setDesignation(2);
 
 			employee.setPerson(person);
 			employee.setEmployeeBean(employeeBean);
 
+			/*
+			 *  status 1 ---> add success
+			 *  status 2 ---> error
+			 *  status 3 ---> person existed but not employee, insert into employee
+			 *  status 4 ---> employee existed
+			 *  status 5 ---> unsuccess
+			 */
 			int status = proxy.createEmployee(employee);
-			if (status == 1) {
-				url = "admin/adminManagement.jsp?addMessage=success";
-			} else if (status == 2) {
-				url = "admin/adminManagement.jsp?addMessage=error{2}";
-			} else if (status == 3) {
-				url = "admin/adminManagement.jsp?addMessage=success1";
-			} else if (status == 4) {
-				url = "admin/adminManagement.jsp?addMessage=emplyExisted";
-			} else {
-				url = "admin/adminManagement.jsp?addMessage=unsuccess";
-			}
+			url = "admin/adminManagement.jsp?message="+status;
 
 		} else if (flag.equals("editEmployee")) {
-
-			url = "admin/adminManagement.jsp?editMessage=success";
-
+			
+			PersonBean p = this.formUserBean(request).getPerson();
+			
+			if(proxy.updateEmployee(p)){
+				url = "admin/adminManagement.jsp?message=edit";
+			}else{
+				url = "admin/adminManagement.jsp?message=editError";
+			}
+			System.out.println(url);
 		} else if (flag.equals("deleteEmployee")) {
-
-			if (proxy.deleteEmployee(userSsn)) {
-				url = "admin/adminManagement.jsp?deleteMessage=success";
+			String id = request.getParameter("employee_id");
+			if(id == null) id="-1";
+			int employee_id = Integer.parseInt(id);
+			if (proxy.deleteEmployee(employee_id)) {
+				url = "admin/adminManagement.jsp?message=delete";
+			}else{
+				url = "admin/adminManagement.jsp?message=deleteError";
 			}
 
 		} else if (flag.equals("searchEmployee")) {
 			String searchType = request.getParameter("searchType");
-			// System.out.println("searchType ---> "+searchType);
 			String keyWords = request.getParameter("keyWords");
-			// System.out.println("keyWords ---> "+keyWords);
 
 			if (searchType.equals("email")) {
 				person.setEmail_address(keyWords);
@@ -110,12 +103,68 @@ public class EmployeeServlet extends HttpServlet {
 			hs.setAttribute("employees", employees);
 			// url="admin/adminLogin?searchMessage=success";
 
-		} else if (flag.equals("list")) {
+		} else if(flag.equals("showAEmployee")){
+				
+			//hs.removeAttribute("employeeShowed");
+			hs.setAttribute("employeeShowed", findPersonByID(request, hs));
+			url = "admin/EmployeeDetail.jsp";
+			
+		}else if(flag.equals("showEdit")){
+			
+			//hs.removeAttribute("employeeShowed");
+			hs.setAttribute("employeeShowed", findPersonByID( request, hs));
+			url = "admin/edit.jsp";
+			
+		}else if (flag.equals("list")) {
 
 			UserBean[] employees = proxy.listAllEmployees();
 			hs.setAttribute("employees", employees);
 		}
 		response.sendRedirect(url);
+	}
+	
+	public UserBean formUserBean(HttpServletRequest request){
+		UserBean user = new UserBean();
+		PersonBean person = new PersonBean();
+		AirlineEmployeeBean emp = new AirlineEmployeeBean();
+		
+		int pid = Integer.parseInt(request.getParameter("person_id"));
+		person.setPerson_id(pid);
+		person.setAddress_line1(request.getParameter("address1"));
+		person.setAddress_line2(request.getParameter("address1"));
+		person.setCity(request.getParameter("city"));
+		person.setCountry(request.getParameter("country"));
+		person.setEmail_address(request.getParameter("email"));
+		person.setFirst_name(request.getParameter("lastname"));
+		person.setLast_name(request.getParameter("firstname"));
+		person.setPerson_type(2);
+		person.setState(request.getParameter("state"));
+		person.setZip_code(request.getParameter("zipCode"));
+		person.setPassport_number(request.getParameter("passport"));
+		String birthday = DateFormatConverter.convertToMySqlDate(request.getParameter("birthday"),true);
+		person.setDob(birthday);
+		
+		user.setPerson(person);
+		
+		emp.setSsn(Integer.parseInt(request.getParameter("ssn")));
+		emp.setPerson_id(pid);
+		user.setEmployeeBean(emp);
+		
+		return user ;
+	}
+	
+	public UserBean findPersonByID( HttpServletRequest request, HttpSession hs){
+		UserBean[] employees = (UserBean[])hs.getAttribute("employees");
+		
+		String pid = request.getParameter("person_id");
+		System.out.println("pid--2-->"+ pid);
+		int id = Integer.parseInt(pid);
+		for(UserBean e :employees){
+			if(e.getPerson().getPerson_id() == id){
+				return e;
+			}
+		}
+		return null;
 	}
 
 }

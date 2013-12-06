@@ -14,13 +14,15 @@ public class JourneyDetailBean  implements java.io.Serializable {
 
     private java.lang.String departure_time;
 
+    private sjsu.cmpe273.project.beans.LocationsBean destinationLocation;
+
     private int flight_destination;
 
     private int flight_id;
 
-    private int flight_source;
+    private java.lang.String flight_name;
 
-    private sjsu.cmpe273.project.beans.LocationsBean from;
+    private int flight_source;
 
     private int journey_id;
 
@@ -30,9 +32,9 @@ public class JourneyDetailBean  implements java.io.Serializable {
 
     private int seats_booked;
 
-    private float ticket_price;
+    private sjsu.cmpe273.project.beans.LocationsBean sourceLocation;
 
-    private sjsu.cmpe273.project.beans.LocationsBean to;
+    private float ticket_price;
 
     public JourneyDetailBean() {
     }
@@ -41,29 +43,31 @@ public class JourneyDetailBean  implements java.io.Serializable {
            java.lang.String airline_name,
            java.lang.String arrival_time,
            java.lang.String departure_time,
+           sjsu.cmpe273.project.beans.LocationsBean destinationLocation,
            int flight_destination,
            int flight_id,
+           java.lang.String flight_name,
            int flight_source,
-           sjsu.cmpe273.project.beans.LocationsBean from,
            int journey_id,
            int journey_status,
            int seats_available,
            int seats_booked,
-           float ticket_price,
-           sjsu.cmpe273.project.beans.LocationsBean to) {
+           sjsu.cmpe273.project.beans.LocationsBean sourceLocation,
+           float ticket_price) {
            this.airline_name = airline_name;
            this.arrival_time = arrival_time;
            this.departure_time = departure_time;
+           this.destinationLocation = destinationLocation;
            this.flight_destination = flight_destination;
            this.flight_id = flight_id;
+           this.flight_name = flight_name;
            this.flight_source = flight_source;
-           this.from = from;
            this.journey_id = journey_id;
            this.journey_status = journey_status;
            this.seats_available = seats_available;
            this.seats_booked = seats_booked;
+           this.sourceLocation = sourceLocation;
            this.ticket_price = ticket_price;
-           this.to = to;
     }
 
 
@@ -128,6 +132,26 @@ public class JourneyDetailBean  implements java.io.Serializable {
 
 
     /**
+     * Gets the destinationLocation value for this JourneyDetailBean.
+     * 
+     * @return destinationLocation
+     */
+    public sjsu.cmpe273.project.beans.LocationsBean getDestinationLocation() {
+        return destinationLocation;
+    }
+
+
+    /**
+     * Sets the destinationLocation value for this JourneyDetailBean.
+     * 
+     * @param destinationLocation
+     */
+    public void setDestinationLocation(sjsu.cmpe273.project.beans.LocationsBean destinationLocation) {
+        this.destinationLocation = destinationLocation;
+    }
+
+
+    /**
      * Gets the flight_destination value for this JourneyDetailBean.
      * 
      * @return flight_destination
@@ -168,6 +192,26 @@ public class JourneyDetailBean  implements java.io.Serializable {
 
 
     /**
+     * Gets the flight_name value for this JourneyDetailBean.
+     * 
+     * @return flight_name
+     */
+    public java.lang.String getFlight_name() {
+        return flight_name;
+    }
+
+
+    /**
+     * Sets the flight_name value for this JourneyDetailBean.
+     * 
+     * @param flight_name
+     */
+    public void setFlight_name(java.lang.String flight_name) {
+        this.flight_name = flight_name;
+    }
+
+
+    /**
      * Gets the flight_source value for this JourneyDetailBean.
      * 
      * @return flight_source
@@ -184,26 +228,6 @@ public class JourneyDetailBean  implements java.io.Serializable {
      */
     public void setFlight_source(int flight_source) {
         this.flight_source = flight_source;
-    }
-
-
-    /**
-     * Gets the from value for this JourneyDetailBean.
-     * 
-     * @return from
-     */
-    public sjsu.cmpe273.project.beans.LocationsBean getFrom() {
-        return from;
-    }
-
-
-    /**
-     * Sets the from value for this JourneyDetailBean.
-     * 
-     * @param from
-     */
-    public void setFrom(sjsu.cmpe273.project.beans.LocationsBean from) {
-        this.from = from;
     }
 
 
@@ -288,6 +312,26 @@ public class JourneyDetailBean  implements java.io.Serializable {
 
 
     /**
+     * Gets the sourceLocation value for this JourneyDetailBean.
+     * 
+     * @return sourceLocation
+     */
+    public sjsu.cmpe273.project.beans.LocationsBean getSourceLocation() {
+        return sourceLocation;
+    }
+
+
+    /**
+     * Sets the sourceLocation value for this JourneyDetailBean.
+     * 
+     * @param sourceLocation
+     */
+    public void setSourceLocation(sjsu.cmpe273.project.beans.LocationsBean sourceLocation) {
+        this.sourceLocation = sourceLocation;
+    }
+
+
+    /**
      * Gets the ticket_price value for this JourneyDetailBean.
      * 
      * @return ticket_price
@@ -304,26 +348,6 @@ public class JourneyDetailBean  implements java.io.Serializable {
      */
     public void setTicket_price(float ticket_price) {
         this.ticket_price = ticket_price;
-    }
-
-
-    /**
-     * Gets the to value for this JourneyDetailBean.
-     * 
-     * @return to
-     */
-    public sjsu.cmpe273.project.beans.LocationsBean getTo() {
-        return to;
-    }
-
-
-    /**
-     * Sets the to value for this JourneyDetailBean.
-     * 
-     * @param to
-     */
-    public void setTo(sjsu.cmpe273.project.beans.LocationsBean to) {
-        this.to = to;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -347,20 +371,23 @@ public class JourneyDetailBean  implements java.io.Serializable {
             ((this.departure_time==null && other.getDeparture_time()==null) || 
              (this.departure_time!=null &&
               this.departure_time.equals(other.getDeparture_time()))) &&
+            ((this.destinationLocation==null && other.getDestinationLocation()==null) || 
+             (this.destinationLocation!=null &&
+              this.destinationLocation.equals(other.getDestinationLocation()))) &&
             this.flight_destination == other.getFlight_destination() &&
             this.flight_id == other.getFlight_id() &&
+            ((this.flight_name==null && other.getFlight_name()==null) || 
+             (this.flight_name!=null &&
+              this.flight_name.equals(other.getFlight_name()))) &&
             this.flight_source == other.getFlight_source() &&
-            ((this.from==null && other.getFrom()==null) || 
-             (this.from!=null &&
-              this.from.equals(other.getFrom()))) &&
             this.journey_id == other.getJourney_id() &&
             this.journey_status == other.getJourney_status() &&
             this.seats_available == other.getSeats_available() &&
             this.seats_booked == other.getSeats_booked() &&
-            this.ticket_price == other.getTicket_price() &&
-            ((this.to==null && other.getTo()==null) || 
-             (this.to!=null &&
-              this.to.equals(other.getTo())));
+            ((this.sourceLocation==null && other.getSourceLocation()==null) || 
+             (this.sourceLocation!=null &&
+              this.sourceLocation.equals(other.getSourceLocation()))) &&
+            this.ticket_price == other.getTicket_price();
         __equalsCalc = null;
         return _equals;
     }
@@ -381,20 +408,23 @@ public class JourneyDetailBean  implements java.io.Serializable {
         if (getDeparture_time() != null) {
             _hashCode += getDeparture_time().hashCode();
         }
+        if (getDestinationLocation() != null) {
+            _hashCode += getDestinationLocation().hashCode();
+        }
         _hashCode += getFlight_destination();
         _hashCode += getFlight_id();
-        _hashCode += getFlight_source();
-        if (getFrom() != null) {
-            _hashCode += getFrom().hashCode();
+        if (getFlight_name() != null) {
+            _hashCode += getFlight_name().hashCode();
         }
+        _hashCode += getFlight_source();
         _hashCode += getJourney_id();
         _hashCode += getJourney_status();
         _hashCode += getSeats_available();
         _hashCode += getSeats_booked();
-        _hashCode += new Float(getTicket_price()).hashCode();
-        if (getTo() != null) {
-            _hashCode += getTo().hashCode();
+        if (getSourceLocation() != null) {
+            _hashCode += getSourceLocation().hashCode();
         }
+        _hashCode += new Float(getTicket_price()).hashCode();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -424,6 +454,12 @@ public class JourneyDetailBean  implements java.io.Serializable {
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("destinationLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "destinationLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("flight_destination");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "flight_destination"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
@@ -436,16 +472,16 @@ public class JourneyDetailBean  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("flight_name");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "flight_name"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("flight_source");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "flight_source"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("from");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "from"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
-        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("journey_id");
@@ -472,16 +508,16 @@ public class JourneyDetailBean  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sourceLocation");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "sourceLocation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("ticket_price");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "ticket_price"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "float"));
         elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("to");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "to"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
-        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

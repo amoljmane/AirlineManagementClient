@@ -80,4 +80,24 @@
     <servlet-name>SearchFlightServlet</servlet-name>
     <url-pattern>/SearchFlightServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerServlet</display-name>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.CustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/CustomerServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

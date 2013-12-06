@@ -8,25 +8,18 @@
 </head>
 <%@ include file="headerClient.jsp"%>
 <script type="text/javascript">
-	$(function() {
-		$("#datepicker").datepicker();
-	});
-
-	$(function() {
-		var availableTags = [ "San Jose", "San Francisco", "Ney York",
-				"Shanghai", "Beijing", "Sichuan", "Chicago", "Shengzhen",
-				"Xiamen", "Tokyo", "Busan" ];
-		$(".tags").autocomplete({
-			source : availableTags
-		});
-	});
+  function clickon(){
+	  
+	  alert("successful");
+  }
 </script>
+
 <body>
 
 	<div style="padding-top: 50px">
 		<h1>Search Flights</h1><hr>
 		<form action="../SearchFlightServlet" method="post">
-			<label class="label label-primary">From :</label><input class="tags" name="from">
+			<label class="label label-primary">From :</label><input onclick="clickon()" class="tags" name="from">
 			<label class="label label-primary"> To :</label><input class="tags" name="to">
 			<label class="label label-primary">Departure time:</label> <input type="text" id="datepicker" name="time">
 			<button type="submit">search</button>
@@ -35,7 +28,6 @@
 	</div>
 	
 	<div  id="result">
-		<h1><%=noflightsMessage %></h1>
 		<div>
 			<table class="table table-striped">
 				<tr>
@@ -49,7 +41,7 @@
 				<tr>
 					<td><%=j.getAirline_name()%></td>
 					<td><%=j.getDeparture_time()%> <br> <%=j.getArrival_time() %></td>
-					<td><%=j.getFrom().getAirport_name()%> <br> <%=j.getTo().getAirport_name() %></td>
+					<td><%=j.getSourceLocation().getAirport_name()%> <br> <%=j.getDestinationLocation().getAirport_name() %></td>
 					<td><%=j.getTicket_price() %></td>
 					<td><a href=""><button type="button" class="btn btn-info">Booking</button></a></td>
 				</tr>

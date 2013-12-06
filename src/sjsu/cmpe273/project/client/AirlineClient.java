@@ -43,7 +43,7 @@ public class AirlineClient {
 		AirlineManagementServiceProxy proxy = new AirlineManagementServiceProxy();
 
 		try {
-			isSuccess = proxy.scheduleFlight(journeyDetailBean);
+			isSuccess = proxy.scheduleJourney(journeyDetailBean);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

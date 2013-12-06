@@ -12,6 +12,21 @@
 <link rel="stylesheet" href="../dist/css/justified-nav.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+	
+	
+	$(function() {
+		var availableTags = [ "San Jose", "San Francisco", "Ney York",
+				"Shanghai", "Beijing", "Sichuan", "Chicago", "Shengzhen",
+				"Xiamen", "Tokyo", "Busan" ];
+		$(".tags").autocomplete({
+			source : availableTags
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,9 +52,9 @@
 						<ul class="dropdown-menu">
 							<li><a href="../EmployeeServlet">Employee Management</a>
 							</li>
-							<li><a href="PersonMng.jsp">Person Management</a>
+							<li><a href="../CustomerServlet">Customer Management</a>
 							</li>
-							<li><a href="../adminAction">Journey Management</a>
+							<li><a href="../JourneyServlet">Journey Management</a>
 							</li>
 							<li><a href="BookingMng.jsp">Booking Management</a>
 							</li>
