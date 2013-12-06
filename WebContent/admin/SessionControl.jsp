@@ -30,7 +30,8 @@
 	else if(message.equals("0")){message = "Error!! - Create employee UN-successfully";}
 	else if(message.equals("FlightAdded")){message="Congradulation!!! Flighted added successfully!!!";}
 	else if(message.equals("FlightAddedError")){message="Error - Flighted added un-successfully!!!";}
-		
+	else if(message.equals("deleteJourney")){message="Delete a Journey successfully!!!!";}
+	else if(message.equals("deleteJourneyError")){message="Error - Delete a Journey UN-successfully!!!!";}
 	/*
 	String  addFlightMessage = (String)request.getSession().getAttribute("FlightAdded");
 	if(addFlightMessage == null){

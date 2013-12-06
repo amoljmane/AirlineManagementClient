@@ -92,9 +92,9 @@
 					
 
 					<td>
-					<a href="../CustomerServlet"><button type="button" class="btn btn-info">Edit</button>  </a> 
-					<a href="../CustomerServlet"><button type="button" class="btn btn-info">Delete</button> </a> 
-					<a href="../CustomerServlet"><button type="button" class="btn btn-info">Show</button> </a>
+					<a href="../JourneyServlet"><button type="button" class="btn btn-info">Edit</button>  </a> 
+					<a href="../JourneyServlet?flag=deleteJourney&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Delete</button> </a> 
+					<a href="../JourneyServlet"><button type="button" class="btn btn-info">Show</button> </a>
 					</td>
 				</tr>
 				<%

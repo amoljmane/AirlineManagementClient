@@ -42,7 +42,11 @@ public class JourneyServlet extends HttpServlet {
 		}else if(flag.equals("showAJourneyDetail")){
 			
 		}else if(flag.equals("deleteJourney")){
-			
+			if(this.deleteJourney(request)){
+				url = "admin/adminManagement.jsp&message=deleteJourney";
+			}else{
+				url = "admin/adminManagement.jsp&message=deleteJourneyError";
+			}
 		}
 		
 		response.sendRedirect(url);
@@ -53,7 +57,6 @@ public class JourneyServlet extends HttpServlet {
 		try {
 			JourneyDetailBean [] j = proxy.listAllJourneys();
 			hs.setAttribute("listJourney", j);
-			
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,9 +65,27 @@ public class JourneyServlet extends HttpServlet {
 		}
 		return isSuccess;
 	}
+	public void showEdit(){
+		
+	}
 	public void editJourney(){}
 	public void showJourneyDetail(){}
-	public void deleteJourney(){}
+	
+	
+	public boolean deleteJourney(HttpServletRequest request){
+		String id = request.getParameter("j_id");
+		int j_id = Integer.parseInt(id);
+		boolean isSucces = true ;
+		try {
+			isSucces = proxy.cancelJourney(j_id);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Error ---> from { JourneyServlet } , method{ deleteJourney }");
+			isSucces = false;
+		}
+		return isSucces;
+	}
 	
 	
 

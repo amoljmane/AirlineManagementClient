@@ -9,6 +9,7 @@ package sjsu.cmpe273.project.service;
 
 public interface AirlineManagementService extends java.rmi.Remote {
     public void main(java.lang.String[] args) throws java.rmi.RemoteException;
+    public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys() throws java.rmi.RemoteException;
     public sjsu.cmpe273.project.beans.UserBean login(java.lang.String email, java.lang.String password) throws java.rmi.RemoteException;
     public boolean updatePerson(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException;
     public boolean deleteUser(java.lang.String userSsn) throws java.rmi.RemoteException;

@@ -50,6 +50,12 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     airlineManagementService.main(args);
   }
   
+  public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys() throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.listAllActiveJourneys();
+  }
+  
   public sjsu.cmpe273.project.beans.UserBean login(java.lang.String email, java.lang.String password) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
