@@ -22,7 +22,7 @@ public class AirlineManagementServiceServiceLocator extends org.apache.axis.clie
     }
 
     // Use to get a proxy class for AirlineManagementService
-    private java.lang.String AirlineManagementService_address = "http://localhost:8080/AirlineManagementService/services/AirlineManagementService";
+    private java.lang.String AirlineManagementService_address = "http://localhost:8080/cmpe273/services/AirlineManagementService";
 
     public java.lang.String getAirlineManagementServiceAddress() {
         return AirlineManagementService_address;
