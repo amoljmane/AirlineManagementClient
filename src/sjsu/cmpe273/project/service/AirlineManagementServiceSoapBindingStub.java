@@ -36,67 +36,67 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("listAllActiveJourneys");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "source"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "destination"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("accountActivity");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"));
         oper.setReturnClass(sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllActiveJourneysReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "accountActivityReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("login");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "email"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("createEmployee");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "loginReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createEmployeeReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("checkDuplicateFlight");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"), sjsu.cmpe273.project.beans.JourneyDetailBean.class, false, false);
+        oper.setName("deleteEmployee");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "checkDuplicateFlightReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteEmployeeReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("listAllLocations");
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.LocationsBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllLocationsReturn"));
+        oper.setName("listAllEmployees");
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllEmployeesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("listAllJourneys");
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllJourneysReturn"));
+        oper.setName("searchEmployee");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "employee"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchEmployeeReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findCustomerByID");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "book_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("updateEmployee");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "person"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "findCustomerByIDReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updateEmployeeReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[6] = oper;
@@ -115,21 +115,23 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findCustomerByID");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "book_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "findCustomerByIDReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[8] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("showEmployeeDetail");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "airlineEmployeeBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "AirlineEmployeeBean"), sjsu.cmpe273.project.beans.AirlineEmployeeBean.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
         oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "showEmployeeDetailReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[8] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("listAllEmployees");
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllEmployeesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[9] = oper;
@@ -139,63 +141,6 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
     private static void _initOperationDesc2(){
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteEmployee");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteEmployeeReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[10] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("searchEmployee");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "employee"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchEmployeeReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[11] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateEmployee");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "person"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updateEmployeeReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[12] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("createEmployee");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(int.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createEmployeeReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[13] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("accountActivity");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "accountActivityReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[14] = oper;
-
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("searchJourneys");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "to"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -209,7 +154,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchJourneysReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[15] = oper;
+        _operations[10] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("passengerOnBoard");
@@ -220,7 +165,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "passengerOnBoardReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[16] = oper;
+        _operations[11] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createCustomer");
@@ -231,7 +176,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createCustomerReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[17] = oper;
+        _operations[12] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("listAllCustomer");
@@ -240,7 +185,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllCustomerReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[18] = oper;
+        _operations[13] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("listAllReservation");
@@ -249,13 +194,8 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllReservationReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[19] = oper;
+        _operations[14] = oper;
 
-    }
-
-    private static void _initOperationDesc3(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("listAllFlights");
         oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
@@ -263,7 +203,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllFlightsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[20] = oper;
+        _operations[15] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("scheduleJourney");
@@ -274,62 +214,135 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "scheduleJourneyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[16] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("listAllLocations");
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "LocationsBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.LocationsBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllLocationsReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[17] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("checkDuplicateFlight");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"), sjsu.cmpe273.project.beans.JourneyDetailBean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "checkDuplicateFlightReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[18] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("listAllJourneys");
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllJourneysReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[19] = oper;
+
+    }
+
+    private static void _initOperationDesc3(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("listAllActiveJourneys");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "source"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "destination"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllActiveJourneysReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[20] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("login");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "email"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "loginReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[21] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("searchFlights");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "flightDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"), sjsu.cmpe273.project.beans.FlightDetailBean.class, false, false);
+        oper.setName("cancelJourney");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.FlightDetailBean[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchFlightsReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelJourneyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[22] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("deleteUser");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("editUser");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteUserReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "editUserReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[23] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("createUser");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "personBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
+        oper.setName("editFlight");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "flightDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"), sjsu.cmpe273.project.beans.FlightDetailBean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createUserReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.FlightDetailBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "editFlightReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[24] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("logOff");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("issueTicket");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "logOffReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "issueTicketReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[25] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updatePerson");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "person"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
+        oper.setName("makePayment");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updatePersonReturn"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"), sjsu.cmpe273.project.beans.JourneyDetailBean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PaymentDetailsBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.PaymentDetailsBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "makePaymentReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[26] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("cancelBooking");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "bookingId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelBookingReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[27] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createBooking");
@@ -344,26 +357,15 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createBookingReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[27] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("cancelBooking");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "bookingId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelBookingReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[28] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("issueTicket");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
+        oper.setName("updatePerson");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "person"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "issueTicketReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updatePersonReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[29] = oper;
@@ -374,41 +376,6 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("makePayment");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "JourneyDetailBean"), sjsu.cmpe273.project.beans.JourneyDetailBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PaymentDetailsBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.PaymentDetailsBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "makePaymentReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[30] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("editUser");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"), sjsu.cmpe273.project.beans.UserBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "editUserReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[31] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("editFlight");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "flightDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"), sjsu.cmpe273.project.beans.FlightDetailBean.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
-        oper.setReturnClass(sjsu.cmpe273.project.beans.FlightDetailBean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "editFlightReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[32] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("journeyDetail");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -417,7 +384,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyDetailReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[33] = oper;
+        _operations[30] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatejourney");
@@ -428,15 +395,48 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updatejourneyReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[34] = oper;
+        _operations[31] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("cancelJourney");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "journeyId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("createUser");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "personBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "PersonBean"), sjsu.cmpe273.project.beans.PersonBean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "UserBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.UserBean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createUserReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[32] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("deleteUser");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelJourneyReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteUserReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[33] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("logOff");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "userSsn"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "logOffReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[34] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("searchFlights");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "flightDetailBean"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"), sjsu.cmpe273.project.beans.FlightDetailBean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans.project.cmpe273.sjsu", "FlightDetailBean"));
+        oper.setReturnClass(sjsu.cmpe273.project.beans.FlightDetailBean[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchFlightsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[35] = oper;
@@ -660,7 +660,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys(int source, int destination) throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.JourneyDetailBean[] accountActivity(java.lang.String userSsn) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -672,11 +672,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllActiveJourneys"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "accountActivity"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(source), new java.lang.Integer(destination)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -694,7 +694,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.UserBean login(java.lang.String email, java.lang.String password) throws java.rmi.RemoteException {
+    public int createEmployee(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -706,11 +706,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "login"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createEmployee"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {email, password});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -718,9 +718,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return (sjsu.cmpe273.project.beans.UserBean) _resp;
+                return ((java.lang.Integer) _resp).intValue();
             } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.UserBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean.class);
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -728,7 +728,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public boolean checkDuplicateFlight(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException {
+    public boolean deleteEmployee(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -740,11 +740,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "checkDuplicateFlight"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteEmployee"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {journeyDetailBean});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -762,7 +762,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.LocationsBean[] listAllLocations() throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.UserBean[] listAllEmployees() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -774,7 +774,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllLocations"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllEmployees"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -786,9 +786,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return (sjsu.cmpe273.project.beans.LocationsBean[]) _resp;
+                return (sjsu.cmpe273.project.beans.UserBean[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.LocationsBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.LocationsBean[].class);
+                return (sjsu.cmpe273.project.beans.UserBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -796,7 +796,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllJourneys() throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.UserBean[] searchEmployee(java.lang.String searchType, sjsu.cmpe273.project.beans.UserBean employee) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -808,11 +808,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllJourneys"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchEmployee"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchType, employee});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -820,9 +820,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) _resp;
+                return (sjsu.cmpe273.project.beans.UserBean[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
+                return (sjsu.cmpe273.project.beans.UserBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -830,7 +830,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.UserBean findCustomerByID(int book_id) throws java.rmi.RemoteException {
+    public boolean updateEmployee(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -842,11 +842,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "findCustomerByID"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updateEmployee"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(book_id)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {person});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -854,9 +854,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return (sjsu.cmpe273.project.beans.UserBean) _resp;
+                return ((java.lang.Boolean) _resp).booleanValue();
             } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.UserBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean.class);
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -898,12 +898,46 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.UserBean showEmployeeDetail(sjsu.cmpe273.project.beans.AirlineEmployeeBean airlineEmployeeBean) throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.UserBean findCustomerByID(int book_id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "findCustomerByID"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(book_id)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (sjsu.cmpe273.project.beans.UserBean) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (sjsu.cmpe273.project.beans.UserBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public sjsu.cmpe273.project.beans.UserBean showEmployeeDetail(sjsu.cmpe273.project.beans.AirlineEmployeeBean airlineEmployeeBean) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[9]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -932,216 +966,12 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.UserBean[] listAllEmployees() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[9]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllEmployees"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (sjsu.cmpe273.project.beans.UserBean[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.UserBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public boolean deleteEmployee(int id) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[10]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteEmployee"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public sjsu.cmpe273.project.beans.UserBean[] searchEmployee(java.lang.String searchType, sjsu.cmpe273.project.beans.UserBean employee) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[11]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchEmployee"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {searchType, employee});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (sjsu.cmpe273.project.beans.UserBean[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.UserBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public boolean updateEmployee(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[12]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updateEmployee"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {person});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public int createEmployee(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[13]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createEmployee"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public sjsu.cmpe273.project.beans.JourneyDetailBean[] accountActivity(java.lang.String userSsn) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[14]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "accountActivity"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public sjsu.cmpe273.project.beans.JourneyDetailBean[] searchJourneys(java.lang.String to, java.lang.String from, java.lang.String time) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[15]);
+        _call.setOperation(_operations[10]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1175,7 +1005,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[16]);
+        _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1209,7 +1039,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[17]);
+        _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1243,7 +1073,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[18]);
+        _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1277,7 +1107,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[19]);
+        _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1311,7 +1141,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[20]);
+        _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1345,7 +1175,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[21]);
+        _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1374,23 +1204,23 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.FlightDetailBean[] searchFlights(sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean) throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.LocationsBean[] listAllLocations() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[22]);
+        _call.setOperation(_operations[17]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchFlights"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllLocations"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {flightDetailBean});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1398,9 +1228,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return (sjsu.cmpe273.project.beans.FlightDetailBean[]) _resp;
+                return (sjsu.cmpe273.project.beans.LocationsBean[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.FlightDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.FlightDetailBean[].class);
+                return (sjsu.cmpe273.project.beans.LocationsBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.LocationsBean[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1408,23 +1238,23 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public boolean deleteUser(java.lang.String userSsn) throws java.rmi.RemoteException {
+    public boolean checkDuplicateFlight(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[23]);
+        _call.setOperation(_operations[18]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteUser"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "checkDuplicateFlight"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {journeyDetailBean});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1442,23 +1272,91 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public sjsu.cmpe273.project.beans.UserBean createUser(sjsu.cmpe273.project.beans.PersonBean personBean) throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllJourneys() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[24]);
+        _call.setOperation(_operations[19]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createUser"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllJourneys"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {personBean});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys(int source, int destination) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[20]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "listAllActiveJourneys"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(source), new java.lang.Integer(destination)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (sjsu.cmpe273.project.beans.JourneyDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.JourneyDetailBean[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public sjsu.cmpe273.project.beans.UserBean login(java.lang.String email, java.lang.String password) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[21]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "login"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {email, password});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1476,23 +1374,23 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public boolean logOff(java.lang.String userSsn) throws java.rmi.RemoteException {
+    public boolean cancelJourney(int journeyId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[25]);
+        _call.setOperation(_operations[22]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "logOff"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelJourney"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(journeyId)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1503,176 +1401,6 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
                 return ((java.lang.Boolean) _resp).booleanValue();
             } catch (java.lang.Exception _exception) {
                 return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public boolean updatePerson(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[26]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updatePerson"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {person});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.lang.String createBooking(sjsu.cmpe273.project.beans.JourneyDetailBean journeyBean, sjsu.cmpe273.project.beans.UserBean[] userBeans, sjsu.cmpe273.project.beans.PaymentDetailsBean paymentBean) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[27]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createBooking"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {journeyBean, userBeans, paymentBean});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.String) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public boolean cancelBooking(int bookingId) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[28]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelBooking"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(bookingId)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public boolean issueTicket(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[29]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "issueTicket"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public sjsu.cmpe273.project.beans.PaymentDetailsBean makePayment(sjsu.cmpe273.project.beans.UserBean userBean, sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[30]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "makePayment"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean, journeyDetailBean});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (sjsu.cmpe273.project.beans.PaymentDetailsBean) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (sjsu.cmpe273.project.beans.PaymentDetailsBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.PaymentDetailsBean.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1685,7 +1413,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[31]);
+        _call.setOperation(_operations[23]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1719,7 +1447,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[32]);
+        _call.setOperation(_operations[24]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1748,12 +1476,182 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
+    public boolean issueTicket(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[25]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "issueTicket"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public sjsu.cmpe273.project.beans.PaymentDetailsBean makePayment(sjsu.cmpe273.project.beans.UserBean userBean, sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[26]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "makePayment"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userBean, journeyDetailBean});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (sjsu.cmpe273.project.beans.PaymentDetailsBean) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (sjsu.cmpe273.project.beans.PaymentDetailsBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.PaymentDetailsBean.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public boolean cancelBooking(int bookingId) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[27]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelBooking"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(bookingId)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String createBooking(sjsu.cmpe273.project.beans.JourneyDetailBean journeyBean, sjsu.cmpe273.project.beans.UserBean[] userBeans, sjsu.cmpe273.project.beans.PaymentDetailsBean paymentBean) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[28]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createBooking"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {journeyBean, userBeans, paymentBean});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public boolean updatePerson(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[29]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "updatePerson"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {person});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetail(int journeyId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[33]);
+        _call.setOperation(_operations[30]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1787,7 +1685,7 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[34]);
+        _call.setOperation(_operations[31]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -1816,7 +1714,109 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
 }
     }
 
-    public boolean cancelJourney(int journeyId) throws java.rmi.RemoteException {
+    public sjsu.cmpe273.project.beans.UserBean createUser(sjsu.cmpe273.project.beans.PersonBean personBean) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[32]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "createUser"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {personBean});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (sjsu.cmpe273.project.beans.UserBean) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (sjsu.cmpe273.project.beans.UserBean) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.UserBean.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public boolean deleteUser(java.lang.String userSsn) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[33]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "deleteUser"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public boolean logOff(java.lang.String userSsn) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[34]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "logOff"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {userSsn});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public sjsu.cmpe273.project.beans.FlightDetailBean[] searchFlights(sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1828,11 +1828,11 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "cancelJourney"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://service.project.cmpe273.sjsu", "searchFlights"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(journeyId)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {flightDetailBean});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -1840,9 +1840,9 @@ public class AirlineManagementServiceSoapBindingStub extends org.apache.axis.cli
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (sjsu.cmpe273.project.beans.FlightDetailBean[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (sjsu.cmpe273.project.beans.FlightDetailBean[]) org.apache.axis.utils.JavaUtils.convert(_resp, sjsu.cmpe273.project.beans.FlightDetailBean[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

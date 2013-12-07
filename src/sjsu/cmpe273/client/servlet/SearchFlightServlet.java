@@ -27,16 +27,16 @@ public class SearchFlightServlet extends HttpServlet {
 		String to = request.getParameter("to");
 		String from = request.getParameter("from");
 		String departure_time = DateFormatConverter.convertToMySqlDate(request.getParameter("time"),false);
-		System.out.println(" search flights!");
+		System.out.println(" ---------------search flights!");
 		String url = "";
 		JourneyDetailBean journey = new JourneyDetailBean();
-		JourneyDetailBean[] journeys = proxy.searchJourneys(to, from, departure_time);
+		JourneyDetailBean[] journeys = proxy.listAllActiveJourneys(Integer.parseInt(to), Integer.parseInt(from));
 		if(journeys != null){
 			HttpSession hs = request.getSession();
 			hs.setAttribute("journeys", journeys);
 			url = "client/client.jsp";
 		}else{
-			url = "client/client.jsp?errorMessage=NoFlights";
+			url = "client/errorPage.jsp?errorMessage=NoFlights";
 		}
 		response.sendRedirect(url);
 	}

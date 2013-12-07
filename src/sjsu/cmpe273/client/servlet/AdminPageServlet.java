@@ -89,11 +89,11 @@ public class AdminPageServlet extends HttpServlet {
 		}
 		
 		if(flightArray == null){
-			url = "admin/adminManagement.jsp";
-			request.setAttribute("NoFlight", "Flight cannot be scheduled now!!");
+			url = "client/errorPage.jsp?message=No flight available";
+			//request.setAttribute("NoFlight", "Flight cannot be scheduled now!!");
 		} else {
 //			url = "/ScheduleFlight.jsp";
-			url = "admin/Journey.jsp";
+			url = "client/client.jsp";
 			request.getSession().setAttribute("Flights", flightArray);
 			request.getSession().setAttribute("Locations", locationList);
 			request.getSession().setAttribute("Months", monthsList);

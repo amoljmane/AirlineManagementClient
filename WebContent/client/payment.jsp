@@ -19,13 +19,13 @@
 	hs.setAttribute("person" , person);
 	hs.setAttribute("journey",journey);
 	
-	System.out.println("price --->"+journey.getTicket_price());
+	//System.out.println("price --->"+journey.getTicket_price());
 
 %>
 </head>
 <body>
 <h1> Payment Information</h1>
-<form method="post" action="payAction" >
+<form method="post" action="paymentAction" >
 	Payment Method<input type="text" name="paymentMethod"><br>
 	First Name<input type="text"  name="firstname"><br>
 	Last Name<input type="text"  name="lastname"><br>

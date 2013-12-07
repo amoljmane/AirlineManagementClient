@@ -148,6 +148,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PaymentServlet</servlet-name>
-    <url-pattern>/PaymentServlet</url-pattern>
+    <url-pattern>/paymentAction</url-pattern>
   </servlet-mapping>
 </web-app>

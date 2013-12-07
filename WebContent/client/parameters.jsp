@@ -7,11 +7,4 @@
 		message = "";
 	}
 
-	String noflightsMessage = "";
-	JourneyDetailBean[] journeys = (JourneyDetailBean[]) request.getSession().getAttribute("journeys");
-	if (journeys == null) {
-		noflightsMessage = "No Flights Recently for your requirements ! Please wait patiently...";
-	} else {
-
-	}
 %>

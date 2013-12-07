@@ -59,9 +59,9 @@ public class BookingServlet extends HttpServlet {
 			}else if(flag.equals("issueTicket")){
 				String bid = request.getParameter("bookingID");
 				if(issueTicket(proxy , Integer.parseInt(bid))){
-					url = "admin/adminManagement.jsp?message=BookingIssuedSuccessful";
+					url = "admin/adminManagement.jsp?message=IssuedTicketSuccessful";
 				}else{
-					url = "admin/adminManagement.jsp?message=BookingIssuedError";
+					url = "admin/adminManagement.jsp?message=IssuedTicketIssuedError";
 				}
 			}
 		}catch(Exception e) {

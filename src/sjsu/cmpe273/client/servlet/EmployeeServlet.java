@@ -123,13 +123,19 @@ public class EmployeeServlet extends HttpServlet {
 		response.sendRedirect(url);
 	}
 	
+	
+	
 	public UserBean formUserBean(HttpServletRequest request){
 		UserBean user = new UserBean();
 		PersonBean person = new PersonBean();
 		AirlineEmployeeBean emp = new AirlineEmployeeBean();
+		String person_id = request.getParameter("person_id");
+		int pid = 0;
+		if(person_id != null){
+			pid = Integer.parseInt(person_id);
+			person.setPerson_id(pid);
+		}
 		
-		int pid = Integer.parseInt(request.getParameter("person_id"));
-		person.setPerson_id(pid);
 		person.setAddress_line1(request.getParameter("address1"));
 		person.setAddress_line2(request.getParameter("address1"));
 		person.setCity(request.getParameter("city"));

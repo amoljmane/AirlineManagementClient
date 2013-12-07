@@ -10,10 +10,7 @@
 <title>Schedule Flight</title>
 <script type="text/javascript">
 
-	function ccc(){
-		
-		alert('aaa');
-	}
+	
 	function changeValue() {
 		if (document.getElementById("flightSelect").value == -1) {
 			document.getElementById("maximumSeats").value = 0;
@@ -168,7 +165,6 @@
 		});
 		
 		$( "#numberOfSeats" ).change(function() {
-			;
 			setSeatsAvailable($(this).val());
 		});
 		
@@ -456,13 +452,13 @@
 	 <tr align="center">
 	 	<td colspan="10">
 	 	<form action="../saveJourneyDetails" method="post" name="createFlightForm" id="createFlightForm">
-	 		<input type="hidden" value="-1" name="ticketPrice" id="ticketPrice"/>
-	 		<input type="hidden" value="-1" name="departureId" id="departureId"/>
-	 		<input type="hidden" value="-1" name="destinationId" id="destinationId"/>
-	 		<input type="hidden" value="amol" name="departureTimestamp" id="departureTimestamp"/>
-	 		<input type="hidden" value="" name="destinationTimestamp" id="destinationTimestamp"/>
-	 		<input type="hidden" value="-1" name="seatsAvailable" id="seatsAvailable"/>
-	 		<input type="hidden" value="-1" name="flightId" id="flightId"/>
+	 		<input type="" value="-1" name="ticketPrice" id="ticketPrice"/>
+	 		<input type="" value="-1" name="departureId" id="departureId"/>
+	 		<input type="" value="-1" name="destinationId" id="destinationId"/>
+	 		<input type="" value="amol" name="departureTimestamp" id="departureTimestamp"/>
+	 		<input type="" value="" name="destinationTimestamp" id="destinationTimestamp"/>
+	 		<input type="" value="-1" name="seatsAvailable" id="seatsAvailable"/>
+	 		<input type="" value="-1" name="flightId" id="flightId"/>
 			<input type="submit" value="Create Flight" name="createFlight" id="createFlight" onclick="submitForm(this.form)"/>	 	
 	 	</form>
 	 	</td>

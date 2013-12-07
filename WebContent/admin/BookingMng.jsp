@@ -46,7 +46,7 @@
 					<td><%=r.getPaymentstatus() %></td>	
 					
 					<td> <a href="../BookingServlet?flag=cancelBooking&bookingID=<%=r.getBookingId() %>"><button type="button" class="btn btn-info">Cancel</button> </a></td>
-					<td> <a href="../JourneyServlet?flag=issueTicket&bookingID=<%=r.getBookingId() %>"><button type="button" class="btn btn-info">Issue Ticket</button> </a></td>
+					<td> <a href="../BookingServlet?flag=issueTicket&bookingID=<%=r.getBookingId() %>"><button type="button" class="btn btn-info">Issue Ticket</button> </a></td>
 				</tr>
 				<%}} %>
 			

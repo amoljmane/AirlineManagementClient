@@ -11,7 +11,10 @@
 
 <%
 LocationsBean[] locations  = (LocationsBean[])request.getSession().getAttribute("locations");
+JourneyDetailBean[] journeys = (JourneyDetailBean[])request.getSession().getAttribute("journeys");
+
 //if(locations!=null){request.getSession().removeAttribute("locations");}
+//if(journeys!=null){request.getSession().removeAttribute("journeys");}
 //System.out.println(locations[0].getAddress());
 %>
 
@@ -48,7 +51,8 @@ LocationsBean[] locations  = (LocationsBean[])request.getSession().getAttribute(
 					<th>Price</th>
 					<th>Booking</th>
 				</tr>
-				<%if(journeys != null){for(JourneyDetailBean  j : journeys){%>
+				<%if(journeys != null){for(JourneyDetailBean  j : journeys){if(j != null){%>
+				
 				<tr>
 					<td><%=j.getAirline_name()%></td>
 					<td><%=j.getDeparture_time()%> <br> <%=j.getArrival_time() %></td>
@@ -56,7 +60,7 @@ LocationsBean[] locations  = (LocationsBean[])request.getSession().getAttribute(
 					<td><%=j.getTicket_price() %></td>
 					<td><a href="CustomerInfor.jsp?jid=<%=j.getJourney_id() %>&price=<%=j.getTicket_price() %>"><button type="button" class="btn btn-info">Booking</button></a></td>
 				</tr>
-				<%}} %>
+				<%}}} %>
 			</table>
 		</div>
 	</div>
