@@ -6,9 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
 <%@ include file="header.jsp"%>
 <%
-	UserBean[] customers = (UserBean[]) request.getSession().getAttribute("allCustomers");
+	UserBean[] customers = (UserBean[]) hs.getAttribute("allCustomers");
+
 %>
 <body>
 	<div class="container">
@@ -30,7 +32,7 @@
 							<h4 class="modal-title" id="myModalLabel">Search Employee</h4>
 						</div>
 
-						<form action="../EmployeeServlet?flag=searchEmployee"
+						<form action="../CustomerServlet?flag=searchCustomer"
 							method="post">
 							<div class="modal-body">
 								<label>Search Type</label> <select name="searchType">

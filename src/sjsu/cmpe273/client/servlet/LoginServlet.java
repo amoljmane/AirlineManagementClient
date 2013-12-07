@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sjsu.cmpe273.project.beans.LocationsBean;
 import sjsu.cmpe273.project.beans.UserBean;
 import sjsu.cmpe273.project.service.AirlineManagementServiceProxy;
 
@@ -32,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 			hs.setAttribute("user", user);
 			if (user.getPerson().getPerson_type() == 3) {
 				hs.setAttribute("userType", "admin");
+				
 				response.sendRedirect("admin/adminManagement.jsp");
 			} else {
 				hs.setAttribute("userType", "client");

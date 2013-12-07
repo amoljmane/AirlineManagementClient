@@ -50,10 +50,10 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     airlineManagementService.main(args);
   }
   
-  public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys() throws java.rmi.RemoteException{
+  public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllActiveJourneys(int source, int destination) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.listAllActiveJourneys();
+    return airlineManagementService.listAllActiveJourneys(source, destination);
   }
   
   public sjsu.cmpe273.project.beans.UserBean login(java.lang.String email, java.lang.String password) throws java.rmi.RemoteException{
@@ -62,70 +62,28 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     return airlineManagementService.login(email, password);
   }
   
-  public sjsu.cmpe273.project.beans.FlightDetailBean[] searchFlights(sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean) throws java.rmi.RemoteException{
+  public boolean checkDuplicateFlight(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.searchFlights(flightDetailBean);
+    return airlineManagementService.checkDuplicateFlight(journeyDetailBean);
   }
   
-  public boolean logOff(java.lang.String userSsn) throws java.rmi.RemoteException{
+  public sjsu.cmpe273.project.beans.LocationsBean[] listAllLocations() throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.logOff(userSsn);
+    return airlineManagementService.listAllLocations();
   }
   
-  public sjsu.cmpe273.project.beans.JourneyDetailBean[] accountActivity(java.lang.String userSsn) throws java.rmi.RemoteException{
+  public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllJourneys() throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.accountActivity(userSsn);
+    return airlineManagementService.listAllJourneys();
   }
   
-  public sjsu.cmpe273.project.beans.UserBean createUser(sjsu.cmpe273.project.beans.PersonBean personBean) throws java.rmi.RemoteException{
+  public sjsu.cmpe273.project.beans.UserBean findCustomerByID(int book_id) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.createUser(personBean);
-  }
-  
-  public boolean deleteUser(java.lang.String userSsn) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.deleteUser(userSsn);
-  }
-  
-  public int createEmployee(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.createEmployee(userBean);
-  }
-  
-  public boolean deleteEmployee(int id) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.deleteEmployee(id);
-  }
-  
-  public sjsu.cmpe273.project.beans.UserBean[] listAllEmployees() throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.listAllEmployees();
-  }
-  
-  public sjsu.cmpe273.project.beans.UserBean[] searchEmployee(java.lang.String searchType, sjsu.cmpe273.project.beans.UserBean employee) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.searchEmployee(searchType, employee);
-  }
-  
-  public boolean updateEmployee(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.updateEmployee(person);
-  }
-  
-  public boolean updatePerson(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.updatePerson(person);
+    return airlineManagementService.findCustomerByID(book_id);
   }
   
   public sjsu.cmpe273.project.beans.UserBean[] searchCustomer(java.lang.String searchType, sjsu.cmpe273.project.beans.UserBean customer) throws java.rmi.RemoteException{
@@ -140,40 +98,58 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     return airlineManagementService.showEmployeeDetail(airlineEmployeeBean);
   }
   
+  public sjsu.cmpe273.project.beans.UserBean[] listAllEmployees() throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.listAllEmployees();
+  }
+  
+  public boolean deleteEmployee(int id) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.deleteEmployee(id);
+  }
+  
+  public sjsu.cmpe273.project.beans.UserBean[] searchEmployee(java.lang.String searchType, sjsu.cmpe273.project.beans.UserBean employee) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.searchEmployee(searchType, employee);
+  }
+  
+  public boolean updateEmployee(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.updateEmployee(person);
+  }
+  
+  public int createEmployee(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.createEmployee(userBean);
+  }
+  
+  public sjsu.cmpe273.project.beans.JourneyDetailBean[] accountActivity(java.lang.String userSsn) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.accountActivity(userSsn);
+  }
+  
   public sjsu.cmpe273.project.beans.JourneyDetailBean[] searchJourneys(java.lang.String to, java.lang.String from, java.lang.String time) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
     return airlineManagementService.searchJourneys(to, from, time);
   }
   
-  public java.lang.String createBooking(sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean, sjsu.cmpe273.project.beans.TravelerBean travelerBean) throws java.rmi.RemoteException{
+  public sjsu.cmpe273.project.beans.PassengerBean passengerOnBoard(sjsu.cmpe273.project.beans.JourneyDetailBean journey) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
-    return airlineManagementService.createBooking(flightDetailBean, travelerBean);
-  }
-  
-  public boolean cancelBooking(int bookingId) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.cancelBooking(bookingId);
+    return airlineManagementService.passengerOnBoard(journey);
   }
   
   public java.lang.String createCustomer(sjsu.cmpe273.project.beans.UserBean customer) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
     return airlineManagementService.createCustomer(customer);
-  }
-  
-  public boolean issueTicket(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.issueTicket(userBean);
-  }
-  
-  public sjsu.cmpe273.project.beans.PaymentDetailsBean makePayment(sjsu.cmpe273.project.beans.UserBean userBean, sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.makePayment(userBean, journeyDetailBean);
   }
   
   public sjsu.cmpe273.project.beans.UserBean[] listAllCustomer() throws java.rmi.RemoteException{
@@ -194,6 +170,66 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     return airlineManagementService.listAllFlights();
   }
   
+  public boolean scheduleJourney(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.scheduleJourney(journeyDetailBean);
+  }
+  
+  public sjsu.cmpe273.project.beans.FlightDetailBean[] searchFlights(sjsu.cmpe273.project.beans.FlightDetailBean flightDetailBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.searchFlights(flightDetailBean);
+  }
+  
+  public boolean deleteUser(java.lang.String userSsn) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.deleteUser(userSsn);
+  }
+  
+  public sjsu.cmpe273.project.beans.UserBean createUser(sjsu.cmpe273.project.beans.PersonBean personBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.createUser(personBean);
+  }
+  
+  public boolean logOff(java.lang.String userSsn) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.logOff(userSsn);
+  }
+  
+  public boolean updatePerson(sjsu.cmpe273.project.beans.PersonBean person) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.updatePerson(person);
+  }
+  
+  public java.lang.String createBooking(sjsu.cmpe273.project.beans.JourneyDetailBean journeyBean, sjsu.cmpe273.project.beans.UserBean[] userBeans, sjsu.cmpe273.project.beans.PaymentDetailsBean paymentBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.createBooking(journeyBean, userBeans, paymentBean);
+  }
+  
+  public boolean cancelBooking(int bookingId) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.cancelBooking(bookingId);
+  }
+  
+  public boolean issueTicket(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.issueTicket(userBean);
+  }
+  
+  public sjsu.cmpe273.project.beans.PaymentDetailsBean makePayment(sjsu.cmpe273.project.beans.UserBean userBean, sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
+    if (airlineManagementService == null)
+      _initAirlineManagementServiceProxy();
+    return airlineManagementService.makePayment(userBean, journeyDetailBean);
+  }
+  
   public sjsu.cmpe273.project.beans.UserBean editUser(sjsu.cmpe273.project.beans.UserBean userBean) throws java.rmi.RemoteException{
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
@@ -204,36 +240,6 @@ public class AirlineManagementServiceProxy implements sjsu.cmpe273.project.servi
     if (airlineManagementService == null)
       _initAirlineManagementServiceProxy();
     return airlineManagementService.editFlight(flightDetailBean);
-  }
-  
-  public sjsu.cmpe273.project.beans.PassengerBean[] passengerOnBoard(int journeyId, sjsu.cmpe273.project.beans.TravelerBean travelerBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.passengerOnBoard(journeyId, travelerBean);
-  }
-  
-  public boolean scheduleJourney(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.scheduleJourney(journeyDetailBean);
-  }
-  
-  public sjsu.cmpe273.project.beans.LocationsBean[] listAllLocations() throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.listAllLocations();
-  }
-  
-  public boolean checkDuplicateFlight(sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetailBean) throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.checkDuplicateFlight(journeyDetailBean);
-  }
-  
-  public sjsu.cmpe273.project.beans.JourneyDetailBean[] listAllJourneys() throws java.rmi.RemoteException{
-    if (airlineManagementService == null)
-      _initAirlineManagementServiceProxy();
-    return airlineManagementService.listAllJourneys();
   }
   
   public sjsu.cmpe273.project.beans.JourneyDetailBean journeyDetail(int journeyId) throws java.rmi.RemoteException{

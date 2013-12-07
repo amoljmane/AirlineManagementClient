@@ -92,9 +92,9 @@
 					
 
 					<td>
-					<a href="../JourneyServlet"><button type="button" class="btn btn-info">Edit</button>  </a> 
+					<a href="../JourneyServlet?flag=showEdit&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Edit</button>  </a> 
 					<a href="../JourneyServlet?flag=deleteJourney&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Delete</button> </a> 
-					<a href="../JourneyServlet"><button type="button" class="btn btn-info">Show</button> </a>
+					<a href="../JourneyServlet?flag=showAJourneyDetail&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Show</button> </a>
 					</td>
 				</tr>
 				<%

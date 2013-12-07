@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>AirlineManagementClient</display-name>
   <welcome-file-list>
     <welcome-file>AdminPage.jsp</welcome-file>
@@ -102,12 +102,52 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>BookingMng</display-name>
-    <servlet-name>BookingMng</servlet-name>
-    <servlet-class>sjsu.cmpe273.client.servlet.BookingMng</servlet-class>
+    <display-name>BookingServlet</display-name>
+    <servlet-name>BookingServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.BookingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BookingMng</servlet-name>
-    <url-pattern>/BookingMng</url-pattern>
+    <servlet-name>BookingServlet</servlet-name>
+    <url-pattern>/BookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListLocations</display-name>
+    <servlet-name>ListLocations</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.ListLocations</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListLocations</servlet-name>
+    <url-pattern>/ListLocations</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LocationsServlet</display-name>
+    <servlet-name>LocationsServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.LocationsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationsServlet</servlet-name>
+    <url-pattern>/locationAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClientBookingServlet</display-name>
+    <servlet-name>ClientBookingServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.ClientBookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientBookingServlet</servlet-name>
+    <url-pattern>/ClientBookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PaymentServlet</display-name>
+    <servlet-name>PaymentServlet</servlet-name>
+    <servlet-class>sjsu.cmpe273.client.servlet.PaymentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PaymentServlet</servlet-name>
+    <url-pattern>/PaymentServlet</url-pattern>
   </servlet-mapping>
 </web-app>

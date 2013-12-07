@@ -1,23 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="SessionControl.jsp"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../dist/css/justified-nav.css">
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="../dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../dist/css/style.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <script type="text/javascript">
 	$(function() {
-		$("#datepicker").datepicker();
+		$("#departureT").datepicker();
 	});
-	
-	
+	$(function() {
+		$("#arrivalT").datepicker();
+	});
+
 	$(function() {
 		var availableTags = [ "San Jose", "San Francisco", "Ney York",
 				"Shanghai", "Beijing", "Sichuan", "Chicago", "Shengzhen",
@@ -27,6 +34,7 @@
 		});
 	});
 </script>
+
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -56,7 +64,7 @@
 							</li>
 							<li><a href="../JourneyServlet">Journey Management</a>
 							</li>
-							<li><a href="BookingMng.jsp">Booking Management</a>
+							<li><a href="../BookingServlet">Booking Management</a>
 							</li>
 						</ul></li>
 				</ul>
