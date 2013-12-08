@@ -96,12 +96,11 @@ public class JourneyServlet extends HttpServlet {
 		try {
 			JourneyDetailBean journey = proxy.journeyDetail(j_id);
 			HttpSession hs = request.getSession();
-			hs.setAttribute("journey", journey);
+			hs.setAttribute("editJourney", journey);
 		} catch (RemoteException e) {
 
 			e.printStackTrace();
-			System.out
-					.println("erroor in servlet [JourneyServlet] , method { showEdit }");
+			System.out.println("erroor in servlet [JourneyServlet] , method { showEdit }");
 			isSuccess = false;
 		}
 		return isSuccess;
@@ -188,7 +187,7 @@ public class JourneyServlet extends HttpServlet {
 			PassengerBean passengerBean = proxy.passengerOnBoard(journey);
 			if (journey != null) {
 
-				request.getSession().setAttribute("journey", journey);
+				request.getSession().setAttribute("journeyInfor", journey);
 				request.getSession().setAttribute("passengerBean",passengerBean);
 				// request.setAttribute("journey", journey);
 				// request.setAttribute("passengerBean", passengerBean);

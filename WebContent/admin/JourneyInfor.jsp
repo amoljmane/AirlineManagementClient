@@ -14,13 +14,14 @@
 	PassengerBean passengerBeans =(PassengerBean)hs.getAttribute("passengerBean");
 	//System.out.println(passengerBeans);
 	PersonBean[] person = passengerBeans.getPassengers();
-	JourneyDetailBean journey = (JourneyDetailBean)hs.getAttribute("journey");
+	JourneyDetailBean journey = (JourneyDetailBean)hs.getAttribute("journeyInfor");
 	//hs.removeAttribute("passengerBean");
 	//hs.removeAttribute("journey");
 	
 %>
 <body>
 	<div>
+		<%if(journey != null){ %>
 		<div>
 			<h2><%=journey.getAirline_name() %></h2>
 			<h2><%=journey.getSourceLocation().getLocation_name() %></h2>
@@ -35,6 +36,7 @@
 		</div>
 		<div id="passeger">
 			<table class="table">
+			<%if(person != null || journey != null){ %>
 				<tr>
 					<th>First Name</th> 
 					<th>Last Name</th> 
@@ -45,7 +47,7 @@
 					<th>Country</th>
 				</tr>
 				
-				<% if(person != null || journey != null){for(PersonBean p : person){ %>
+				<%}for(PersonBean p : person){if(p != null){ %>
 				<tr>
 					<td><%=p.getFirst_name() %></td>
 					<td><%=p.getLast_name() %></td>
@@ -55,7 +57,11 @@
 					<td><%=p.getState() %></td>
 					<td><%=p.getCountry() %></td>
 				</tr>
-				<%}} %>
+				<%}}}else{%>
+				<tr>
+					<td><p>Error - Can not find any information about in detail in system, please contact Project 273 - Team 4 - <strong>Richa</strong></p></td>
+				</tr>
+				<%} %>
 			</table>
 		</div>
 	</div>

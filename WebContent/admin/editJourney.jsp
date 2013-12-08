@@ -4,7 +4,7 @@
 	
 <%@ include file="header.jsp"%>
 <%
-	JourneyDetailBean journey = (JourneyDetailBean)hs.getAttribute("journey");
+	JourneyDetailBean journey = (JourneyDetailBean)hs.getAttribute("editJourney");
 	LocationsBean[] locations  = (LocationsBean[])hs.getAttribute("locations");
 
 %>

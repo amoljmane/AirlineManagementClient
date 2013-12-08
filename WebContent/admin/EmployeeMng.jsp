@@ -97,6 +97,7 @@
 
 		<div>
 			<table class="table table-striped">
+			<%if(employees != null){ %>
 				<tr>
 					<th>ID</th>
 					<th>LastName</th>
@@ -110,7 +111,7 @@
 					<th></th>
 					<th></th>
 				</tr>
-				<%if(employees != null){for(UserBean employee : employees){%>
+				<%for(UserBean employee : employees){if(employee != null){%>
 				<tr>
 					<td><%=employee.getPerson().getPerson_id() %></td>
 					<td><%=employee.getPerson().getLast_name() %></td>
@@ -127,7 +128,11 @@
 						<a href="../EmployeeServlet?flag=showAEmployee&person_id=<%=employee.getPerson().getPerson_id()%>"><button type="button" class="btn btn-info">Show</button></a>
 					</td>
 				</tr>
-				<%}} %>
+				<%}}}else{%>
+				<tr>
+					<td><p>Error - Can not find any information about Employee in system, please contact Project 273 - Team 4 - <strong>Shibai Lee</strong></p></td>
+				</tr>
+			<%} %>
 			</table>
 		</div>
 		<hr>

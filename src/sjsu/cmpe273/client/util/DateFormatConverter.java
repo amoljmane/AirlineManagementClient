@@ -4,6 +4,10 @@ public class DateFormatConverter {
 	public static String convertToMySqlDate(String time, boolean isEdit) {
 		String[] date = new String[3];
 
+		
+		if(time == null || time == ""){
+			return "";
+		}
 		String month = "";
 		String day = "";
 		String year = "";

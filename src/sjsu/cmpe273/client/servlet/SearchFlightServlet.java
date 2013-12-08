@@ -33,7 +33,7 @@ public class SearchFlightServlet extends HttpServlet {
 		JourneyDetailBean[] journeys = proxy.listAllActiveJourneys(Integer.parseInt(to), Integer.parseInt(from));
 		if(journeys != null){
 			HttpSession hs = request.getSession();
-			hs.setAttribute("journeys", journeys);
+			hs.setAttribute("SearchJourneys", journeys);
 			url = "client/client.jsp";
 		}else{
 			url = "client/errorPage.jsp?errorMessage=NoFlights";

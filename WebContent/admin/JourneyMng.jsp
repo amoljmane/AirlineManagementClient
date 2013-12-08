@@ -64,6 +64,7 @@
 
 		<div>
 			<table class="table table-striped">
+			<% if (journeys != null) {%>
 				<tr>
 					<th>ID</th>
 					<th>Flight ID</th>
@@ -75,10 +76,7 @@
 					<th>Seats Booked</th>
 					<th>Ticket Price</th>
 				</tr>
-				<%
-					if (journeys != null) {
-						for (JourneyDetailBean j : journeys) {
-				%>
+				<%for(JourneyDetailBean j : journeys){if(j != null){%>
 				<tr>
 					<td><%=j.getJourney_id()%></td>
 					<td><%=j.getFlight_name()%></td>
@@ -89,19 +87,17 @@
 					<td><%=j.getSeats_available()%></td>
 					<td><%=j.getSeats_booked()%></td>
 					<td><%=j.getTicket_price()%></td>
-					
-
 					<td>
 					<a href="../JourneyServlet?flag=showEdit&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Edit</button>  </a> 
 					<a href="../JourneyServlet?flag=deleteJourney&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Delete</button> </a> 
 					<a href="../JourneyServlet?flag=showAJourneyDetail&j_id=<%=j.getJourney_id()%>"><button type="button" class="btn btn-info">Show</button> </a>
 					</td>
 				</tr>
-				<%
-					}
-					}
-				
-				%>
+				<%}}}else{%>
+				<tr>
+					<td><p>Error - Can not find any information about Flights in system, please contact Project 273 - Team 4 - <strong>Frank</strong></p></td>
+				</tr>
+				<%} %>
 			</table>
 		</div>
 		<hr>

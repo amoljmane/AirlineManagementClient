@@ -18,7 +18,7 @@
 			<h1>Employee Detail</h1>
 			<hr>
 		</div>
-
+		<%if(emply != null){ %>
 		<div>
 			<div><label>LastName---</label><%=emply.getPerson().getLast_name() %></div>
 			<div><label>FirstName---</label><%=emply.getPerson().getFirst_name()%></div>
@@ -34,5 +34,8 @@
 			<div><label>State---</label> <%=emply.getPerson().getState()%></div>
 			<div><label>Country---</label><%=emply.getPerson().getCountry()%></div>
 		</div>
+		<%}else{%>
+			<div><p>Error - Can not find any information about Employee in detail in system, please contact Project 273 - Team 4 - <strong>Omkar</strong></p></div>
+		<%}%>
 </body>
 </html>

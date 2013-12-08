@@ -56,6 +56,7 @@
 			<!-- /.modal -->
 		<div>
 			<table class="table table-striped">
+			<%if(customers != null){ %>
 				<tr>
 					<th>ID</th>
 					<th>LastName</th>
@@ -69,7 +70,7 @@
 					<th></th>
 					<th></th>
 				</tr>
-				<%if(customers != null){for(UserBean customer : customers){%>
+				<%for(UserBean customer : customers){if(customer != null){%>
 				<tr>
 					<td><%=customer.getPerson().getPerson_id() %></td>
 					<td><%=customer.getPerson().getLast_name() %></td>
@@ -86,7 +87,11 @@
 						<a href="../CustomerServlet?flag=showACustomer&person_id=<%=customer.getPerson().getPerson_id()%>"><button type="button" class="btn btn-info">Show</button></a>
 					</td>
 				</tr>
-				<%}} %>
+				<%}}}else{ %>
+				<tr>
+					<td><p>Error - Can not find any information about customer in system, please contact Project 273 - Team 4 - <strong>Amol</strong></p></td>
+				</tr>
+				<%} %>
 			</table>
 		</div>
 		<hr>

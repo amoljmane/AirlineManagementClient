@@ -23,6 +23,7 @@
 
 		<div>
 			<table class="table table-striped">
+			<%if(reservations !=null){ %>
 				<tr>
 					<th>ID</th>
 					<th>customerName</th>
@@ -34,7 +35,7 @@
 					<th>payment status</th>
 					
 				</tr>
-				<%if(reservations !=null){for(ReservationBean r:reservations) {%>
+				<%for(ReservationBean r:reservations) {if(r != null){%>
 				<tr>
 					<td><%=r.getBookingId() %></td>
 					<td><%=r.getCustomerName() %></td>
@@ -48,7 +49,11 @@
 					<td> <a href="../BookingServlet?flag=cancelBooking&bookingID=<%=r.getBookingId() %>"><button type="button" class="btn btn-info">Cancel</button> </a></td>
 					<td> <a href="../BookingServlet?flag=issueTicket&bookingID=<%=r.getBookingId() %>"><button type="button" class="btn btn-info">Issue Ticket</button> </a></td>
 				</tr>
-				<%}} %>
+				<%}}}else{ %>
+				<tr>
+					<td><p>Error - Can not find any information about Booking in system, please contact Project 273 - Team 4 - <strong>Amol</strong></p></td>
+				</tr>
+			<%} %>
 			
 			</table>
 		</div>
